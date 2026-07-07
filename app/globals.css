@@ -1,0 +1,62 @@
+@import "leaflet/dist/leaflet.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f5f8f4;
+  color: #081412;
+}
+
+.dark body {
+  background: #07100f;
+  color: #e8f1ec;
+}
+
+::selection {
+  background: rgba(215, 144, 59, 0.35);
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 80px rgba(8, 20, 18, 0.18);
+  backdrop-filter: blur(24px);
+}
+
+.dark .glass {
+  border-color: rgba(232, 241, 236, 0.14);
+  background: rgba(8, 20, 18, 0.46);
+}
+
+.section-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.leaflet-container {
+  min-height: 520px;
+  width: 100%;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  .leaflet-container {
+    min-height: 430px;
+  }
+}
