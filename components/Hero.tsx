@@ -1,8 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, MapPin } from "lucide-react";
 import { useRef } from "react";
+import { AmbientParticles } from "./AmbientParticles";
+
+const MotionLink = motion(Link);
 
 const container = {
   hidden: {},
@@ -37,6 +41,7 @@ export function Hero() {
         className="absolute inset-0 scale-110 bg-hero-texture bg-cover bg-center"
       />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_15%,rgba(215,144,59,0.24),transparent_30%),linear-gradient(90deg,rgba(8,20,18,0.78),rgba(8,20,18,0.18))]" />
+      <AmbientParticles />
 
       <motion.div
         style={{ opacity: contentOpacity }}
@@ -61,22 +66,22 @@ export function Hero() {
             menjaga keanekaragaman hayati, dan membangun ketahanan iklim jangka panjang di Desa Sebauk.
           </motion.p>
           <motion.div variants={item} className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <motion.a
+            <MotionLink
               href="/program"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center justify-center rounded-full bg-ember px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-ink transition-colors hover:bg-[#e2a860] focus:outline-none focus:ring-2 focus:ring-white"
             >
               Lihat Program
-            </motion.a>
-            <motion.a
+            </MotionLink>
+            <MotionLink
               href="/peta"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center justify-center rounded-full border border-white/28 bg-white/12 px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md transition-colors hover:bg-white/22 focus:outline-none focus:ring-2 focus:ring-ember"
             >
               Lihat Lokasi
-            </motion.a>
+            </MotionLink>
           </motion.div>
         </motion.div>
       </motion.div>

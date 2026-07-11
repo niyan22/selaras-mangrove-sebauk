@@ -13,7 +13,7 @@ export function MapTeaser() {
             title="Area restorasi Desa Sebauk."
             description="Lihat lokasi zona restorasi di peta interaktif, lengkap dengan konteks pesisir Bengkalis dan rencana pemantauan mendatang."
           />
-          <Reveal className="relative overflow-hidden rounded-lg border border-canopy/12 bg-gradient-to-br from-canopy via-tide to-ember p-10 text-white shadow-glow dark:border-white/10">
+          <Reveal className="animate-tide relative overflow-hidden rounded-lg border border-canopy/12 bg-gradient-to-br from-canopy via-tide to-ember p-10 text-white shadow-glow dark:border-white/10">
             <MapPin aria-hidden className="h-10 w-10 text-white/85" />
             <p className="mt-6 text-2xl font-semibold">Desa Sebauk, Bengkalis, Riau</p>
             <p className="mt-3 max-w-md leading-7 text-white/78">

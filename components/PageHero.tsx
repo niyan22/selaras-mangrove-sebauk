@@ -31,7 +31,7 @@ type PageHeroProps = {
 export function PageHero({ eyebrow, title, description, children }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden bg-ink text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(215,144,59,0.22),transparent_38%),radial-gradient(circle_at_82%_100%,rgba(14,116,144,0.28),transparent_45%)]" />
+      <div className="animate-tide absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(215,144,59,0.22),transparent_38%),radial-gradient(circle_at_82%_100%,rgba(14,116,144,0.28),transparent_45%)]" />
       <motion.div
         className="section-shell relative z-10 py-20 md:py-28"
         variants={container}

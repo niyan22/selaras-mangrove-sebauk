@@ -49,7 +49,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export function AnimatedStats() {
   return (
-    <section className="bg-[linear-gradient(135deg,#0B3D2E,#0E7490_58%,#D7903B)] py-24 text-white md:py-32">
+    <section className="animate-tide bg-[linear-gradient(135deg,#0B3D2E,#0E7490_58%,#D7903B)] py-24 text-white md:py-32">
       <div className="section-shell">
         <SectionHeader
           eyebrow="Statistik Animasi"

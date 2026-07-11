@@ -69,10 +69,18 @@ export function Gallery({ variant = "full", hideHeader = false }: GalleryProps) 
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover transition duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                 sizes="(min-width: 768px) 33vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/76 via-ink/12 to-transparent" />
+              <div
+                aria-hidden
+                className="absolute inset-0 origin-bottom scale-y-0 bg-gradient-to-t from-tide/65 via-tide/25 to-transparent opacity-0 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] motion-safe:group-hover:scale-y-100 motion-safe:group-hover:opacity-100"
+                style={{
+                  clipPath:
+                    "polygon(0% 76%, 10% 81%, 22% 74%, 35% 83%, 48% 76%, 61% 84%, 74% 77%, 87% 82%, 100% 76%, 100% 100%, 0% 100%)"
+                }}
+              />
               <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-white">
                 <h3 className="text-xl font-bold">{image.title}</h3>
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/18 backdrop-blur">

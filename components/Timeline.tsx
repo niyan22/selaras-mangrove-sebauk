@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
+import { TimelineTrack } from "./TimelineTrack";
 
 const milestones = [
   {
@@ -55,34 +56,31 @@ export function Timeline({ variant = "full", hideHeader = false }: TimelineProps
             description="Urutan program yang jelas membantu mengubah satu acara penanaman menjadi alur kerja konservasi yang terdokumentasi."
           />
         )}
-        <div className="relative mt-16">
-          <div className="absolute left-5 top-0 hidden h-full w-px bg-canopy/16 dark:bg-white/14 md:block" />
-          <div className="grid gap-5">
-            {items.map((item, index) => (
-              <Reveal
-                key={item.title}
-                delay={index * 0.07}
-                className="group grid gap-5 rounded-lg border border-canopy/10 bg-white/76 p-5 shadow-sm transition hover:border-ember/50 hover:shadow-glow dark:border-white/10 dark:bg-white/[0.06] md:grid-cols-[84px_1fr]"
-              >
-                <div className="flex items-start gap-4 md:block">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-canopy text-sm font-black text-white transition group-hover:bg-ember group-hover:text-ink">
-                    {item.phase}
-                  </span>
-                </div>
-                <div className="grid gap-4 md:grid-cols-[0.8fr_1.2fr] md:items-start">
-                  <div>
-                    <div className="inline-flex items-center gap-2 text-sm font-semibold text-tide dark:text-ember">
-                      <CalendarDays aria-hidden className="h-4 w-4" />
-                      {item.date}
-                    </div>
-                    <h3 className="mt-3 text-2xl font-bold text-canopy dark:text-mist">{item.title}</h3>
+        <TimelineTrack>
+          {items.map((item, index) => (
+            <Reveal
+              key={item.title}
+              delay={index * 0.07}
+              className="group grid gap-5 rounded-lg border border-canopy/10 bg-white/76 p-5 shadow-sm transition hover:border-ember/50 hover:shadow-glow dark:border-white/10 dark:bg-white/[0.06] md:grid-cols-[84px_1fr]"
+            >
+              <div className="flex items-start gap-4 md:block">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-canopy text-sm font-black text-white transition group-hover:bg-ember group-hover:text-ink">
+                  {item.phase}
+                </span>
+              </div>
+              <div className="grid gap-4 md:grid-cols-[0.8fr_1.2fr] md:items-start">
+                <div>
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-tide dark:text-ember">
+                    <CalendarDays aria-hidden className="h-4 w-4" />
+                    {item.date}
                   </div>
-                  <p className="leading-7 text-ink/68 dark:text-mist/68">{item.body}</p>
+                  <h3 className="mt-3 text-2xl font-bold text-canopy dark:text-mist">{item.title}</h3>
                 </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
+                <p className="leading-7 text-ink/68 dark:text-mist/68">{item.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </TimelineTrack>
         {isTeaser ? (
           <Reveal delay={0.2} className="mt-10">
             <Link
