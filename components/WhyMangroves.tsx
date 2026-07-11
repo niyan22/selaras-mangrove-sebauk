@@ -1,4 +1,5 @@
-import { Leaf, ShieldCheck, ThermometerSun, Trees } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Leaf, ShieldCheck, ThermometerSun, Trees } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
@@ -25,19 +26,29 @@ const benefits = [
   }
 ];
 
-export function WhyMangroves() {
+type WhyMangrovesProps = {
+  variant?: "full" | "teaser";
+  hideHeader?: boolean;
+};
+
+export function WhyMangroves({ variant = "full", hideHeader = false }: WhyMangrovesProps) {
+  const isTeaser = variant === "teaser";
+  const items = isTeaser ? benefits.slice(0, 2) : benefits;
+
   return (
     <section id="impact" className="bg-ink py-24 text-white md:py-32">
       <div className="section-shell">
-        <SectionHeader
-          eyebrow="Mengapa Mangrove Penting"
-          title="Bibit kecil bisa menjadi infrastruktur pesisir yang krusial."
-          description="Hutan mangrove berada di titik pertemuan darat dan laut, tempat kesehatan ekologi, penghidupan masyarakat, dan ketahanan iklim saling terhubung erat."
-          align="center"
-          tone="dark"
-        />
-        <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {benefits.map((benefit, index) => {
+        {hideHeader ? null : (
+          <SectionHeader
+            eyebrow="Mengapa Mangrove Penting"
+            title="Bibit kecil bisa menjadi infrastruktur pesisir yang krusial."
+            description="Hutan mangrove berada di titik pertemuan darat dan laut, tempat kesehatan ekologi, penghidupan masyarakat, dan ketahanan iklim saling terhubung erat."
+            align="center"
+            tone="dark"
+          />
+        )}
+        <div className={`mt-16 grid gap-4 sm:grid-cols-2 ${isTeaser ? "" : "lg:grid-cols-4"}`}>
+          {items.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
               <Reveal
@@ -54,6 +65,17 @@ export function WhyMangroves() {
             );
           })}
         </div>
+        {isTeaser ? (
+          <Reveal delay={0.24} className="mt-10 flex justify-center">
+            <Link
+              href="/dampak"
+              className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-ember transition hover:gap-3"
+            >
+              Lihat semua dampak
+              <ArrowRight aria-hidden className="h-4 w-4 transition-transform" />
+            </Link>
+          </Reveal>
+        ) : null}
       </div>
     </section>
   );

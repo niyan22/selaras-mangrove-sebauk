@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Camera } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Camera } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
@@ -36,22 +37,32 @@ const images = [
   }
 ];
 
-export function Gallery() {
+type GalleryProps = {
+  variant?: "full" | "teaser";
+  hideHeader?: boolean;
+};
+
+export function Gallery({ variant = "full", hideHeader = false }: GalleryProps) {
+  const isTeaser = variant === "teaser";
+  const items = isTeaser ? images.slice(0, 3) : images;
+
   return (
     <section id="gallery" className="bg-mist py-24 dark:bg-ink md:py-32">
       <div className="section-shell">
-        <SectionHeader
-          eyebrow="Galeri Mangrove"
-          title="Catatan visual untuk restorasi dan edukasi."
-          description="Gambar ini masih sementara untuk peluncuran awal, akan diganti dengan dokumentasi asli hasil kerja lapangan di Desa Sebauk."
-        />
-        <div className="mt-14 grid auto-rows-[260px] gap-4 md:grid-cols-3">
-          {images.map((image, index) => (
+        {hideHeader ? null : (
+          <SectionHeader
+            eyebrow="Galeri Mangrove"
+            title="Catatan visual untuk restorasi dan edukasi."
+            description="Gambar ini masih sementara untuk peluncuran awal, akan diganti dengan dokumentasi asli hasil kerja lapangan di Desa Sebauk."
+          />
+        )}
+        <div className={`mt-14 grid auto-rows-[260px] gap-4 ${isTeaser ? "md:grid-cols-3" : "md:grid-cols-3"}`}>
+          {items.map((image, index) => (
             <Reveal
               key={image.title}
               delay={index * 0.05}
               className={`group relative overflow-hidden rounded-lg ${
-                index === 0 || index === 5 ? "md:col-span-2" : ""
+                !isTeaser && (index === 0 || index === 5) ? "md:col-span-2" : ""
               }`}
             >
               <Image
@@ -71,6 +82,17 @@ export function Gallery() {
             </Reveal>
           ))}
         </div>
+        {isTeaser ? (
+          <Reveal delay={0.2} className="mt-10">
+            <Link
+              href="/galeri"
+              className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-canopy transition hover:gap-3 hover:text-ember dark:text-ember"
+            >
+              Lihat galeri lengkap
+              <ArrowRight aria-hidden className="h-4 w-4 transition-transform" />
+            </Link>
+          </Reveal>
+        ) : null}
       </div>
     </section>
   );

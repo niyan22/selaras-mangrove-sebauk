@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { ContactFooter } from "@/components/ContactFooter";
+import { Navbar } from "@/components/Navbar";
+import { PageTransition } from "@/components/PageTransition";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mangrove-sebauk.vercel.app";
@@ -65,7 +68,17 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ember focus:px-5 focus:py-2 focus:text-sm focus:font-bold focus:text-ink"
+        >
+          Lewati ke konten utama
+        </a>
+        <Navbar />
+        <main id="main-content" className="overflow-hidden">
+          <PageTransition>{children}</PageTransition>
+        </main>
+        <ContactFooter />
       </body>
     </html>
   );

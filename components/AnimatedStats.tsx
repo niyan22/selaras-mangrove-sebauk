@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useInView, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
@@ -12,20 +12,32 @@ const stats = [
   { value: 12, suffix: " bln", label: "Masa pemantauan" }
 ];
 
+function formatValue(value: number) {
+  return Number.isInteger(value) ? Math.round(value).toLocaleString("id-ID") : value.toFixed(1);
+}
+
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const reduceMotion = useReducedMotion();
   const motionValue = useMotionValue(0);
   const spring = useSpring(motionValue, { stiffness: 90, damping: 20 });
-  const rounded = useTransform(spring, (latest) =>
-    Number.isInteger(value) ? Math.round(latest).toLocaleString("id-ID") : latest.toFixed(1)
-  );
+  const rounded = useTransform(spring, (latest) => formatValue(latest));
 
   useEffect(() => {
-    if (inView) {
+    if (inView && !reduceMotion) {
       motionValue.set(value);
     }
-  }, [inView, motionValue, value]);
+  }, [inView, motionValue, value, reduceMotion]);
+
+  if (reduceMotion) {
+    return (
+      <span ref={ref}>
+        {formatValue(value)}
+        {suffix}
+      </span>
+    );
+  }
 
   return (
     <span ref={ref}>

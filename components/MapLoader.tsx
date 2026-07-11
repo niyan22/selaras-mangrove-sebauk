@@ -16,6 +16,6 @@ const InteractiveMap = dynamic(
   }
 );
 
-export function MapLoader() {
-  return <InteractiveMap />;
+export function MapLoader({ hideHeader = false }: { hideHeader?: boolean }) {
+  return <InteractiveMap hideHeader={hideHeader} />;
 }

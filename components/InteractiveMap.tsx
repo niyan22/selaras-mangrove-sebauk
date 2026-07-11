@@ -7,17 +7,19 @@ import { SectionHeader } from "./SectionHeader";
 
 const sebaukPosition: [number, number] = [1.4308, 102.1569];
 
-export function InteractiveMap() {
+export function InteractiveMap({ hideHeader = false }: { hideHeader?: boolean }) {
   return (
     <section id="map" className="bg-[#eef5f0] py-24 dark:bg-[#091715] md:py-32">
       <div className="section-shell">
-        <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
-          <SectionHeader
-            eyebrow="Peta Interaktif"
-            title="Area restorasi Desa Sebauk."
-            description="Penanda ini menggunakan koordinat publik perkiraan untuk Desa Sebauk, Bengkalis. Akan diganti dengan koordinat zona penanaman yang tepat setelah pemetaan lapangan selesai."
-          />
-          <Reveal className="rounded-lg border border-canopy/10 bg-white/72 p-5 dark:border-white/10 dark:bg-white/[0.06]">
+        <div className={hideHeader ? "" : "grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end"}>
+          {hideHeader ? null : (
+            <SectionHeader
+              eyebrow="Peta Interaktif"
+              title="Area restorasi Desa Sebauk."
+              description="Penanda ini menggunakan koordinat publik perkiraan untuk Desa Sebauk, Bengkalis. Akan diganti dengan koordinat zona penanaman yang tepat setelah pemetaan lapangan selesai."
+            />
+          )}
+          <Reveal className="max-w-2xl rounded-lg border border-canopy/10 bg-white/72 p-5 dark:border-white/10 dark:bg-white/[0.06]">
             <div className="flex items-start gap-4">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-tide text-white">
                 <Navigation aria-hidden className="h-5 w-5" />
