@@ -6,18 +6,18 @@ import { SectionHeader } from "./SectionHeader";
 const pillars = [
   {
     icon: Waves,
-    title: "Coastal Protection",
-    body: "Planting native mangrove seedlings along vulnerable shoreline points to reduce erosion pressure."
+    title: "Perlindungan Pesisir",
+    body: "Menanam bibit mangrove asli di titik-titik garis pantai yang rentan untuk mengurangi tekanan abrasi."
   },
   {
     icon: BookOpen,
-    title: "Environmental Learning",
-    body: "Community workshops and school-friendly materials explain mangrove ecology in practical language."
+    title: "Edukasi Lingkungan",
+    body: "Lokakarya masyarakat dan materi ramah sekolah menjelaskan ekologi mangrove dengan bahasa yang mudah dipahami."
   },
   {
     icon: Handshake,
-    title: "Local Stewardship",
-    body: "Village groups, students, and partners coordinate monitoring after the ceremonial planting day."
+    title: "Pelestarian Lokal",
+    body: "Kelompok warga, mahasiswa, dan mitra berkoordinasi memantau pertumbuhan setelah hari penanaman seremonial."
   }
 ];
 
@@ -27,9 +27,9 @@ export function AboutProgram() {
       <div className="section-shell grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <div>
           <SectionHeader
-            eyebrow="About Program"
-            title="A living shoreline project led with the Sebauk community."
-            description="The Mangrove Planting Program is a KKN Berdampak 2026 conservation initiative focused on restoration, education, and measurable community impact in Bengkalis."
+            eyebrow="Tentang Program"
+            title="Proyek garis pantai hidup bersama masyarakat Sebauk."
+            description="Program Penanaman Mangrove adalah inisiatif konservasi KKN Berdampak 2026 yang berfokus pada restorasi, edukasi, dan dampak nyata bagi masyarakat Bengkalis."
           />
           <div className="mt-10 grid gap-4">
             {pillars.map((pillar, index) => {
@@ -58,7 +58,7 @@ export function AboutProgram() {
         <Reveal className="relative min-h-[620px] overflow-hidden rounded-lg shadow-glow">
           <Image
             src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1300&q=85"
-            alt="Coastal landscape with water and vegetation"
+            alt="Pemandangan pesisir dengan air dan vegetasi"
             fill
             className="object-cover"
             sizes="(min-width: 1024px) 50vw, 100vw"
@@ -66,8 +66,8 @@ export function AboutProgram() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
           <div className="glass absolute bottom-6 left-6 right-6 rounded-lg p-6 text-white">
-            <p className="text-sm uppercase tracking-[0.22em] text-ember">Program Focus</p>
-            <p className="mt-3 text-2xl font-semibold">Restore, teach, monitor, and hand over.</p>
+            <p className="text-sm uppercase tracking-[0.22em] text-ember">Fokus Program</p>
+            <p className="mt-3 text-2xl font-semibold">Memulihkan, mengedukasi, memantau, dan menyerahterimakan.</p>
           </div>
         </Reveal>
       </div>

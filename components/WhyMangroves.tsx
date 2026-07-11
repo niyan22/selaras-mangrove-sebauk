@@ -5,23 +5,23 @@ import { SectionHeader } from "./SectionHeader";
 const benefits = [
   {
     icon: ShieldCheck,
-    title: "Natural Breakwaters",
-    body: "Mangrove roots slow waves and stabilize sediment across tidal zones."
+    title: "Pemecah Gelombang Alami",
+    body: "Akar mangrove memperlambat gelombang dan menstabilkan sedimen di sepanjang zona pasang surut."
   },
   {
     icon: Trees,
-    title: "Blue Carbon Stores",
-    body: "Healthy mangroves can lock carbon in biomass and coastal soil for decades."
+    title: "Penyimpan Karbon Biru",
+    body: "Mangrove yang sehat mampu menyimpan karbon dalam biomassa dan tanah pesisir selama puluhan tahun."
   },
   {
     icon: Leaf,
-    title: "Biodiversity Nurseries",
-    body: "Juvenile fish, crabs, birds, and insects rely on mangrove habitat complexity."
+    title: "Rumah Keanekaragaman Hayati",
+    body: "Anakan ikan, kepiting, burung, dan serangga bergantung pada kompleksitas habitat mangrove."
   },
   {
     icon: ThermometerSun,
-    title: "Climate Adaptation",
-    body: "Restored coastal vegetation helps communities adapt to changing shoreline conditions."
+    title: "Adaptasi Perubahan Iklim",
+    body: "Vegetasi pesisir yang dipulihkan membantu masyarakat beradaptasi dengan perubahan kondisi garis pantai."
   }
 ];
 
@@ -30,9 +30,9 @@ export function WhyMangroves() {
     <section id="impact" className="bg-ink py-24 text-white md:py-32">
       <div className="section-shell">
         <SectionHeader
-          eyebrow="Why Mangroves Matter"
-          title="Small seedlings can become critical coastal infrastructure."
-          description="Mangrove forests sit at the meeting point of land and sea, where ecological health, community livelihoods, and climate resilience are deeply connected."
+          eyebrow="Mengapa Mangrove Penting"
+          title="Bibit kecil bisa menjadi infrastruktur pesisir yang krusial."
+          description="Hutan mangrove berada di titik pertemuan darat dan laut, tempat kesehatan ekologi, penghidupan masyarakat, dan ketahanan iklim saling terhubung erat."
           align="center"
           tone="dark"
         />

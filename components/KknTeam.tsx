@@ -6,22 +6,22 @@ import { SectionHeader } from "./SectionHeader";
 const members = [
   {
     name: "Alya Prameswari",
-    role: "Program Coordinator",
+    role: "Koordinator Program",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=85"
   },
   {
     name: "Raka Wiratama",
-    role: "Field Mapping Lead",
+    role: "Ketua Pemetaan Lapangan",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=85"
   },
   {
     name: "Nadira Salsabila",
-    role: "Education & Outreach",
+    role: "Edukasi & Sosialisasi",
     image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=500&q=85"
   },
   {
     name: "Fajar Mahendra",
-    role: "Documentation Lead",
+    role: "Ketua Dokumentasi",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=85"
   }
 ];
@@ -31,9 +31,9 @@ export function KknTeam() {
     <section id="team" className="bg-ink py-24 text-white md:py-32">
       <div className="section-shell">
         <SectionHeader
-          eyebrow="KKN Team"
-          title="A student team supporting community-scale conservation."
-          description="Placeholder profiles can be updated with the official KKN Berdampak 2026 roster, partner logos, and advisor credits."
+          eyebrow="Tim KKN"
+          title="Tim mahasiswa yang mendukung konservasi skala masyarakat."
+          description="Profil ini masih sementara dan akan diperbarui dengan daftar resmi KKN Berdampak 2026, logo mitra, dan kredit pembimbing."
           align="center"
           tone="dark"
         />
@@ -61,7 +61,7 @@ export function KknTeam() {
                   </span>
                   <a
                     href="mailto:kkn.sebauk@example.org"
-                    aria-label={`Email ${member.name}`}
+                    aria-label={`Kirim email ke ${member.name}`}
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 text-white/75 transition hover:border-ember hover:text-ember"
                   >
                     <Mail aria-hidden className="h-5 w-5" />

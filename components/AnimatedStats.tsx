@@ -6,10 +6,10 @@ import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
 const stats = [
-  { value: 1200, suffix: "+", label: "Mangrove seedlings targeted" },
-  { value: 3.5, suffix: " ha", label: "Estimated restoration zone" },
-  { value: 80, suffix: "+", label: "Residents and students involved" },
-  { value: 12, suffix: " mo", label: "Monitoring window" }
+  { value: 1200, suffix: "+", label: "Target bibit mangrove" },
+  { value: 3.5, suffix: " ha", label: "Perkiraan zona restorasi" },
+  { value: 80, suffix: "+", label: "Warga dan mahasiswa terlibat" },
+  { value: 12, suffix: " bln", label: "Masa pemantauan" }
 ];
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
@@ -18,7 +18,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   const motionValue = useMotionValue(0);
   const spring = useSpring(motionValue, { stiffness: 90, damping: 20 });
   const rounded = useTransform(spring, (latest) =>
-    Number.isInteger(value) ? Math.round(latest).toLocaleString("en-US") : latest.toFixed(1)
+    Number.isInteger(value) ? Math.round(latest).toLocaleString("id-ID") : latest.toFixed(1)
   );
 
   useEffect(() => {
@@ -40,9 +40,9 @@ export function AnimatedStats() {
     <section className="bg-[linear-gradient(135deg,#0B3D2E,#0E7490_58%,#D7903B)] py-24 text-white md:py-32">
       <div className="section-shell">
         <SectionHeader
-          eyebrow="Animated Statistics"
-          title="Measuring the restoration story."
-          description="These placeholder indicators can be replaced with verified field data as the KKN team finalizes the program report."
+          eyebrow="Statistik Animasi"
+          title="Mengukur kisah restorasi."
+          description="Indikator ini masih sementara dan akan diganti dengan data lapangan terverifikasi setelah tim KKN menuntaskan laporan program."
           align="center"
           tone="dark"
         />

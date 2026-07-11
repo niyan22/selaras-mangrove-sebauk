@@ -6,13 +6,13 @@ export function ContactFooter() {
     <footer id="contact" className="bg-[#06100e] text-white">
       <section className="section-shell grid gap-10 py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
         <Reveal>
-          <p className="text-sm font-bold uppercase tracking-[0.24em] text-ember">Contact & Footer</p>
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-ember">Kontak & Footer</p>
           <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight md:text-6xl">
-            Keep the shoreline story growing.
+            Terus tumbuhkan kisah garis pantai ini.
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/68">
-            For collaboration, sponsorship, field documentation, or verified program data, contact the
-            KKN Berdampak 2026 Sebauk Village team.
+            Untuk kolaborasi, sponsorship, dokumentasi lapangan, atau data program terverifikasi, hubungi
+            tim KKN Berdampak 2026 Desa Sebauk.
           </p>
         </Reveal>
         <Reveal className="glass rounded-lg p-6">
@@ -27,7 +27,7 @@ export function ContactFooter() {
             </a>
             <p className="flex items-start gap-4 text-white/80">
               <MapPin aria-hidden className="mt-1 h-5 w-5 shrink-0 text-ember" />
-              Sebauk Village, Bengkalis Regency, Riau, Indonesia
+              Desa Sebauk, Kabupaten Bengkalis, Riau, Indonesia
             </p>
           </div>
         </Reveal>
@@ -38,7 +38,7 @@ export function ContactFooter() {
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ember text-ink">
               <Sprout aria-hidden className="h-4 w-4" />
             </span>
-            <span>© 2026 Mangrove Planting Program - KKN Berdampak.</span>
+            <span>© 2026 Program Penanaman Mangrove - KKN Berdampak Sebauk.</span>
           </div>
           <div className="flex items-center gap-3">
             <a

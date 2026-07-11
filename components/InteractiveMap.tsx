@@ -13,9 +13,9 @@ export function InteractiveMap() {
       <div className="section-shell">
         <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <SectionHeader
-            eyebrow="Interactive Map"
-            title="Sebauk Village restoration area."
-            description="The marker uses approximate public coordinates for Sebauk Village, Bengkalis. Replace with exact planting-zone coordinates when field mapping is complete."
+            eyebrow="Peta Interaktif"
+            title="Area restorasi Desa Sebauk."
+            description="Penanda ini menggunakan koordinat publik perkiraan untuk Desa Sebauk, Bengkalis. Akan diganti dengan koordinat zona penanaman yang tepat setelah pemetaan lapangan selesai."
           />
           <Reveal className="rounded-lg border border-canopy/10 bg-white/72 p-5 dark:border-white/10 dark:bg-white/[0.06]">
             <div className="flex items-start gap-4">
@@ -23,10 +23,10 @@ export function InteractiveMap() {
                 <Navigation aria-hidden className="h-5 w-5" />
               </span>
               <div>
-                <h3 className="text-xl font-bold text-canopy dark:text-mist">Bengkalis coastal context</h3>
+                <h3 className="text-xl font-bold text-canopy dark:text-mist">Konteks pesisir Bengkalis</h3>
                 <p className="mt-2 leading-7 text-ink/68 dark:text-mist/68">
-                  The interactive map supports planning, storytelling, and future monitoring layers for
-                  seedlings, access paths, and community facilities.
+                  Peta interaktif ini mendukung perencanaan, penceritaan, dan lapisan pemantauan di masa
+                  depan untuk bibit, jalur akses, dan fasilitas masyarakat.
                 </p>
               </div>
             </div>
@@ -49,9 +49,9 @@ export function InteractiveMap() {
               }}
             >
               <Popup>
-                <strong>Sebauk Village</strong>
+                <strong>Desa Sebauk</strong>
                 <br />
-                Mangrove Planting Program - KKN Berdampak 2026
+                Program Penanaman Mangrove - KKN Berdampak 2026
               </Popup>
             </CircleMarker>
           </MapContainer>

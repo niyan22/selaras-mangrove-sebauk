@@ -6,33 +6,33 @@ import { SectionHeader } from "./SectionHeader";
 const images = [
   {
     src: "https://images.unsplash.com/photo-1518877593221-1f28583780b4?auto=format&fit=crop&w=900&q=85",
-    title: "Tidal Edge",
-    alt: "Coastal water surface near a restoration area"
+    title: "Tepi Pasang Surut",
+    alt: "Permukaan air pesisir di dekat area restorasi"
   },
   {
     src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85",
-    title: "Forest Canopy",
-    alt: "Dense green forest canopy"
+    title: "Kanopi Hutan",
+    alt: "Kanopi hutan hijau yang lebat"
   },
   {
     src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85",
-    title: "Village Landscape",
-    alt: "Natural rural landscape during golden hour"
+    title: "Lanskap Desa",
+    alt: "Lanskap pedesaan alami saat golden hour"
   },
   {
     src: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85",
-    title: "Coastal Motion",
-    alt: "Ocean waves approaching shoreline"
+    title: "Gerak Pesisir",
+    alt: "Gelombang laut mendekati garis pantai"
   },
   {
     src: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=85",
-    title: "Blue Carbon",
-    alt: "Clear coastal water and natural vegetation"
+    title: "Karbon Biru",
+    alt: "Air pesisir jernih dan vegetasi alami"
   },
   {
     src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85",
-    title: "Field Monitoring",
-    alt: "Mountain and forest scenery as placeholder conservation image"
+    title: "Pemantauan Lapangan",
+    alt: "Pemandangan gunung dan hutan sebagai gambar konservasi sementara"
   }
 ];
 
@@ -41,9 +41,9 @@ export function Gallery() {
     <section id="gallery" className="bg-mist py-24 dark:bg-ink md:py-32">
       <div className="section-shell">
         <SectionHeader
-          eyebrow="Mangrove Gallery"
-          title="A visual record for restoration and education."
-          description="Use these placeholder images for launch, then swap in original documentation from Sebauk Village fieldwork."
+          eyebrow="Galeri Mangrove"
+          title="Catatan visual untuk restorasi dan edukasi."
+          description="Gambar ini masih sementara untuk peluncuran awal, akan diganti dengan dokumentasi asli hasil kerja lapangan di Desa Sebauk."
         />
         <div className="mt-14 grid auto-rows-[260px] gap-4 md:grid-cols-3">
           {images.map((image, index) => (

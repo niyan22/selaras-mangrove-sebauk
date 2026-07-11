@@ -5,33 +5,33 @@ import { SectionHeader } from "./SectionHeader";
 const milestones = [
   {
     phase: "01",
-    title: "Site Observation",
-    date: "February 2026",
-    body: "Initial mapping of shoreline conditions, access points, community priorities, and planting opportunities."
+    title: "Observasi Lokasi",
+    date: "Februari 2026",
+    body: "Pemetaan awal kondisi garis pantai, titik akses, prioritas masyarakat, dan peluang lokasi penanaman."
   },
   {
     phase: "02",
-    title: "Community Coordination",
-    date: "March 2026",
-    body: "Village leaders, youth groups, and KKN mentors align the planting plan and educational activities."
+    title: "Koordinasi Masyarakat",
+    date: "Maret 2026",
+    body: "Tokoh desa, kelompok pemuda, dan pendamping KKN menyelaraskan rencana penanaman serta kegiatan edukasi."
   },
   {
     phase: "03",
-    title: "Seedling Preparation",
+    title: "Persiapan Bibit",
     date: "April 2026",
-    body: "Mangrove seedlings are selected, staged, and prepared with simple survival-monitoring records."
+    body: "Bibit mangrove dipilih, disiapkan, dan dicatat dengan sistem pemantauan kelangsungan hidup yang sederhana."
   },
   {
     phase: "04",
-    title: "Planting Day",
-    date: "May 2026",
-    body: "Students and residents plant seedlings in coordinated zones along the Sebauk coastal edge."
+    title: "Hari Penanaman",
+    date: "Mei 2026",
+    body: "Mahasiswa dan warga menanam bibit di zona-zona yang telah dikoordinasikan di sepanjang tepi pesisir Sebauk."
   },
   {
     phase: "05",
-    title: "Monitoring Handover",
-    date: "June 2026",
-    body: "The team documents survival checks and shares a stewardship guide for post-program care."
+    title: "Serah Terima Pemantauan",
+    date: "Juni 2026",
+    body: "Tim mendokumentasikan pemeriksaan kelangsungan hidup bibit dan membagikan panduan pelestarian pascaprogram."
   }
 ];
 
@@ -40,9 +40,9 @@ export function Timeline() {
     <section id="timeline" className="bg-mist py-24 dark:bg-ink md:py-32">
       <div className="section-shell">
         <SectionHeader
-          eyebrow="Interactive Timeline"
-          title="From observation to long-term care."
-          description="A clear program sequence helps turn one planting event into a documented conservation workflow."
+          eyebrow="Linimasa Interaktif"
+          title="Dari observasi hingga perawatan jangka panjang."
+          description="Urutan program yang jelas membantu mengubah satu acara penanaman menjadi alur kerja konservasi yang terdokumentasi."
         />
         <div className="relative mt-16">
           <div className="absolute left-5 top-0 hidden h-full w-px bg-canopy/16 dark:bg-white/14 md:block" />
