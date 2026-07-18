@@ -6,7 +6,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
-  const logoBuffer = await fetch(new URL("../public/logo.png", import.meta.url)).then((res) =>
+  const logoBuffer = await fetch(new URL("../public/logo-og.png", import.meta.url)).then((res) =>
     res.arrayBuffer()
   );
   let binary = "";
