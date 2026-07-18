@@ -2,6 +2,7 @@
 
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
 import { Navigation } from "lucide-react";
+import { PulseMarker } from "./PulseMarker";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
@@ -56,6 +57,7 @@ export function InteractiveMap({ hideHeader = false }: { hideHeader?: boolean })
                 Program Penanaman Mangrove - KKN Berdampak 2026
               </Popup>
             </CircleMarker>
+            <PulseMarker position={sebaukPosition} />
           </MapContainer>
         </Reveal>
       </div>

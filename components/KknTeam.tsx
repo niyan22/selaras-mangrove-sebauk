@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, UserRound } from "lucide-react";
-import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
+import { TeamCard } from "./TeamCard";
 
 const members = [
   {
@@ -74,9 +74,9 @@ export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) 
         ) : (
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {members.map((member, index) => (
-              <Reveal
+              <TeamCard
                 key={member.name}
-                delay={index * 0.08}
+                index={index}
                 className="group overflow-hidden rounded-lg border border-white/10 bg-white/[0.06]"
               >
                 <div className="relative aspect-[4/5] overflow-hidden">
@@ -105,7 +105,7 @@ export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) 
                   <h3 className="text-xl font-bold">{member.name}</h3>
                   <p className="mt-2 text-sm uppercase tracking-[0.18em] text-white/58">{member.role}</p>
                 </div>
-              </Reveal>
+              </TeamCard>
             ))}
           </div>
         )}

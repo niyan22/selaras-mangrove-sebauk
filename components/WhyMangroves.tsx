@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Leaf, ShieldCheck, ThermometerSun, Trees } from "lucide-react";
+import { IconBadge } from "./IconBadge";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
@@ -56,9 +57,12 @@ export function WhyMangroves({ variant = "full", hideHeader = false }: WhyMangro
                 delay={index * 0.08}
                 className="min-h-[250px] rounded-lg border border-white/10 bg-white/[0.06] p-6 transition hover:-translate-y-1 hover:bg-white/[0.1]"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ember text-ink">
+                <IconBadge
+                  delay={index * 0.08 + 0.15}
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-ember text-ink"
+                >
                   <Icon aria-hidden className="h-6 w-6" />
-                </span>
+                </IconBadge>
                 <h3 className="mt-7 text-xl font-bold">{benefit.title}</h3>
                 <p className="mt-4 leading-7 text-white/66">{benefit.body}</p>
               </Reveal>

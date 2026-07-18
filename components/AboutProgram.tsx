@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Handshake, Waves } from "lucide-react";
+import { IconBadge } from "./IconBadge";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
@@ -63,9 +64,12 @@ export function AboutProgram({ variant = "full", hideHeader = false }: AboutProg
                     className="rounded-lg border border-canopy/10 bg-white/70 p-5 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/6"
                   >
                     <div className="flex gap-4">
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-canopy text-white dark:bg-ember dark:text-ink">
+                      <IconBadge
+                        delay={index * 0.08 + 0.15}
+                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-canopy text-white dark:bg-ember dark:text-ink"
+                      >
                         <Icon aria-hidden className="h-5 w-5" />
-                      </span>
+                      </IconBadge>
                       <div>
                         <h3 className="text-lg font-bold text-canopy dark:text-mist">{pillar.title}</h3>
                         <p className="mt-2 leading-7 text-ink/68 dark:text-mist/68">{pillar.body}</p>

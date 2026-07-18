@@ -9,6 +9,7 @@ const routes = [
   { path: "/linimasa", priority: 0.7 },
   { path: "/galeri", priority: 0.7 },
   { path: "/peta", priority: 0.7 },
+  { path: "/peta/desain", priority: 0.5 },
   { path: "/tim", priority: 0.6 }
 ];
 
