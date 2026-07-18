@@ -44,7 +44,7 @@ const jsonLd = {
   "@type": "Organization",
   name: "Program Penanaman Mangrove - KKN Berdampak 2026 Sebauk",
   url: siteUrl,
-  logo: `${siteUrl}/icon.svg`,
+  logo: `${siteUrl}/logo.png`,
   description:
     "Program restorasi pesisir dan penanaman mangrove di Desa Sebauk, Bengkalis, Riau, Indonesia, dijalankan oleh tim KKN Berdampak 2026.",
   address: {

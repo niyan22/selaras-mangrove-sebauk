@@ -1,4 +1,5 @@
-import { Facebook, Instagram, Mail, MapPin, Phone, Sprout } from "lucide-react";
+import Image from "next/image";
+import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 export function ContactFooter() {
@@ -35,9 +36,7 @@ export function ContactFooter() {
       <div className="border-t border-white/10">
         <div className="section-shell flex flex-col gap-5 py-6 text-sm text-white/58 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ember text-ink">
-              <Sprout aria-hidden className="h-4 w-4" />
-            </span>
+            <Image src="/logo.png" alt="Logo Selaras Mangrove Sebauk" width={36} height={36} className="h-9 w-9 object-contain" />
             <span>© 2026 Program Penanaman Mangrove - KKN Berdampak Sebauk.</span>
           </div>
           <div className="flex items-center gap-3">

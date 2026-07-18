@@ -9,6 +9,7 @@ yarn-debug.log*
 yarn-error.log*
 .vercel
 .claude
+design
 
 .vercel
 .env*

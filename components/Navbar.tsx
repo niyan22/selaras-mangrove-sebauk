@@ -1,9 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Sprout, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -35,9 +36,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/75 text-white backdrop-blur-xl">
       <nav className="section-shell flex items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.24em]">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ember text-ink">
-            <Sprout aria-hidden className="h-5 w-5" />
-          </span>
+          <Image src="/logo.png" alt="Logo Selaras Mangrove Sebauk" width={40} height={40} priority className="h-10 w-10 object-contain" />
           Mangrove Sebauk
         </Link>
 

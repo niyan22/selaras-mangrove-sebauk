@@ -6,6 +6,16 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
+  const logoBuffer = await fetch(new URL("../public/logo.png", import.meta.url)).then((res) =>
+    res.arrayBuffer()
+  );
+  let binary = "";
+  const bytes = new Uint8Array(logoBuffer);
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  const logoSrc = `data:image/png;base64,${btoa(binary)}`;
+
   return new ImageResponse(
     (
       <div
@@ -22,22 +32,8 @@ export default async function Image() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: 56,
-              height: 56,
-              borderRadius: "999px",
-              background: "#D7903B",
-              color: "#081412",
-              fontSize: 28,
-              fontWeight: 700
-            }}
-          >
-            M
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoSrc} width={56} height={56} alt="" />
           <div style={{ fontSize: 26, letterSpacing: 4, textTransform: "uppercase", opacity: 0.9 }}>
             KKN Berdampak 2026
           </div>
