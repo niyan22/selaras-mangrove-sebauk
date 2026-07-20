@@ -59,8 +59,11 @@ export function Hero() {
             variants={item}
             className="max-w-5xl text-balance font-display text-[clamp(3.1rem,9vw,8.8rem)] font-semibold leading-[0.88] tracking-normal"
           >
-            Program Penanaman Mangrove
+            SELARAS
           </motion.h1>
+          <motion.p variants={item} className="mt-4 font-display text-2xl font-semibold text-ember md:text-3xl">
+            Sebauk Lestari dan Asri
+          </motion.p>
           <motion.p variants={item} className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-white/86 md:text-xl">
             KKN Berdampak 2026 bermitra dengan masyarakat pesisir untuk memulihkan garis pantai,
             menjaga keanekaragaman hayati, dan membangun ketahanan iklim jangka panjang di Desa Sebauk.
