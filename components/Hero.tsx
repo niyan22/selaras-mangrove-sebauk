@@ -6,7 +6,7 @@ import { ArrowDown, MapPin } from "lucide-react";
 import { useRef } from "react";
 import { AmbientParticles } from "./AmbientParticles";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 const container = {
   hidden: {},
