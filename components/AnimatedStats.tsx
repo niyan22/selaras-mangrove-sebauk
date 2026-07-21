@@ -6,10 +6,9 @@ import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
 const stats = [
-  { value: 1200, suffix: "+", label: "Target bibit mangrove" },
+  { value: 1000, suffix: "+", label: "Target bibit mangrove" },
   { value: 3.5, suffix: " ha", label: "Perkiraan zona restorasi" },
-  { value: 80, suffix: "+", label: "Warga dan mahasiswa terlibat" },
-  { value: 12, suffix: " bln", label: "Masa pemantauan" }
+  { value: 60, suffix: "+", label: "Warga dan mahasiswa terlibat" }
 ];
 
 function formatValue(value: number) {
@@ -58,7 +57,7 @@ export function AnimatedStats() {
           align="center"
           tone="dark"
         />
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-14 grid max-w-3xl gap-4 sm:grid-cols-3">
           {stats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.08} className="glass rounded-lg p-6">
               <p className="font-display text-5xl font-semibold md:text-6xl">

@@ -14,7 +14,7 @@ export default function TimPage() {
       <PageHero
         eyebrow="Tim KKN"
         title="Tim mahasiswa yang mendukung konservasi skala masyarakat."
-        description="Profil ini masih sementara dan akan diperbarui dengan daftar resmi KKN Berdampak 2026, logo mitra, dan kredit pembimbing."
+        description="Sepuluh mahasiswa lintas jurusan Universitas Riau yang menjalankan Program SELARAS di Desa Sebauk."
       />
       <KknTeam variant="full" hideHeader />
     </>

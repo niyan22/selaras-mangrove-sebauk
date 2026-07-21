@@ -5,27 +5,19 @@ import { SectionHeader } from "./SectionHeader";
 import { TeamCard } from "./TeamCard";
 
 const members = [
-  {
-    name: "Alya Prameswari",
-    role: "Koordinator Program",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=85"
-  },
-  {
-    name: "Raka Wiratama",
-    role: "Ketua Pemetaan Lapangan",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=85"
-  },
-  {
-    name: "Nadira Salsabila",
-    role: "Edukasi & Sosialisasi",
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=500&q=85"
-  },
-  {
-    name: "Fajar Mahendra",
-    role: "Ketua Dokumentasi",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=85"
-  }
+  { name: "Muhammad Reza Maulana", role: "Ketua", major: "Ilmu Kelautan", image: "/reza.JPG" },
+  { name: "Ratih Asri Audina", role: "Sekretaris 1", major: "PBSI", image: "/ratih.JPG" },
+  { name: "Angie Aurellia Wijaya", role: "Sekretaris 2", major: "Teknik Kimia", image: "/angie.JPG" },
+  { name: "Salsabila", role: "Bendahara", major: "PBSI", image: "/salsa.JPG" },
+  { name: "M. Adam Bahtiar", role: "Koordinator Lapangan", major: "Ilmu Kelautan", image: "/adam.JPG" },
+  { name: "Salomo Rizky Cassanova", role: "Humas", major: "Ilmu Kelautan", image: "/joshua.JPG" },
+  { name: "Chahniyan Regina Kasih Zebua", role: "PDD 1", major: "Teknik Informatika", image: "/chahni.JPG" },
+  { name: "Angelica Christina Sihombing", role: "PDD 2", major: "Administrasi Publik", image: "/angel.JPG" },
+  { name: "Nova Sarina", role: "Konsumsi", major: "Administrasi Publik", image: "/nova.JPG" },
+  { name: "Ridhonius Munthe", role: "Perlengkapan", major: "Ilmu Pemerintahan", image: "/ridho.JPG" }
 ];
+
+const TEASER_AVATAR_LIMIT = 6;
 
 type KknTeamProps = {
   variant?: "full" | "teaser";
@@ -34,6 +26,8 @@ type KknTeamProps = {
 
 export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) {
   const isTeaser = variant === "teaser";
+  const teaserAvatars = members.slice(0, TEASER_AVATAR_LIMIT);
+  const remainingCount = members.length - teaserAvatars.length;
 
   return (
     <section id="team" className="bg-ink py-24 text-white md:py-32">
@@ -42,7 +36,7 @@ export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) 
           <SectionHeader
             eyebrow="Tim KKN"
             title="Tim mahasiswa yang mendukung konservasi skala masyarakat."
-            description="Profil ini masih sementara dan akan diperbarui dengan daftar resmi KKN Berdampak 2026, logo mitra, dan kredit pembimbing."
+            description="Sepuluh mahasiswa lintas jurusan yang menjalankan Program SELARAS di Desa Sebauk."
             align="center"
             tone="dark"
           />
@@ -51,7 +45,7 @@ export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) 
         {isTeaser ? (
           <div className="mt-12 flex flex-col items-center gap-6">
             <div className="flex -space-x-4">
-              {members.map((member) => (
+              {teaserAvatars.map((member) => (
                 <div
                   key={member.name}
                   className="relative h-16 w-16 overflow-hidden rounded-full border-2 border-ink ring-2 ring-white/15"
@@ -59,6 +53,11 @@ export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) 
                   <Image src={member.image} alt={member.name} fill className="object-cover" sizes="64px" />
                 </div>
               ))}
+              {remainingCount > 0 ? (
+                <div className="relative flex h-16 w-16 items-center justify-center rounded-full border-2 border-ink bg-white/10 text-sm font-bold ring-2 ring-white/15">
+                  +{remainingCount}
+                </div>
+              ) : null}
             </div>
             <p className="text-white/70">
               {members.length} mahasiswa lintas divisi menjalankan program ini di lapangan.
@@ -72,7 +71,7 @@ export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) 
             </Link>
           </div>
         ) : (
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {members.map((member, index) => (
               <TeamCard
                 key={member.name}
@@ -85,7 +84,7 @@ export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) 
                     alt={`${member.name}, ${member.role}`}
                     fill
                     className="object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
-                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
                 </div>
@@ -95,7 +94,7 @@ export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) 
                       <UserRound aria-hidden className="h-5 w-5" />
                     </span>
                     <a
-                      href="mailto:kkn.sebauk@example.org"
+                      href="mailto:kkndesasebaukunri@gmail.com"
                       aria-label={`Kirim email ke ${member.name}`}
                       className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 text-white/75 transition hover:border-ember hover:text-ember"
                     >
@@ -104,6 +103,7 @@ export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) 
                   </div>
                   <h3 className="text-xl font-bold">{member.name}</h3>
                   <p className="mt-2 text-sm uppercase tracking-[0.18em] text-white/58">{member.role}</p>
+                  <p className="mt-1 text-sm text-white/40">{member.major}</p>
                 </div>
               </TeamCard>
             ))}
