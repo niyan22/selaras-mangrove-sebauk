@@ -39,11 +39,15 @@ export function AnimatedHeading({ text, as = "h2", className, trigger = "inView"
       : { animate: "visible" };
 
   return (
-    <Tag className={className} variants={container} initial="hidden" {...viewportProps}>
+    <Tag className={className} variants={container} initial="hidden" aria-label={text} {...viewportProps}>
       {words.map((w, i) => (
-        <motion.span key={`${w}-${i}`} variants={word} className="inline-block">
+        <motion.span
+          key={`${w}-${i}`}
+          variants={word}
+          aria-hidden="true"
+          className={`inline-block ${i < words.length - 1 ? "mr-[0.28em]" : ""}`}
+        >
           {w}
-          {i < words.length - 1 ? " " : ""}
         </motion.span>
       ))}
     </Tag>
