@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import type { ReactNode } from "react";
+import { AnimatedHeading } from "./AnimatedHeading";
 
 const container = {
   hidden: {},
@@ -50,12 +51,13 @@ export function PageHero({ eyebrow, title, description, children }: PageHeroProp
         <motion.p variants={item} className="mt-8 text-sm font-bold uppercase tracking-[0.24em] text-ember">
           {eyebrow}
         </motion.p>
-        <motion.h1
-          variants={item}
+        <AnimatedHeading
+          as="h1"
+          text={title}
+          trigger="mount"
+          delay={0.25}
           className="mt-4 max-w-3xl text-balance font-display text-4xl font-semibold leading-tight md:text-6xl"
-        >
-          {title}
-        </motion.h1>
+        />
         <motion.p variants={item} className="mt-5 max-w-2xl text-pretty text-lg leading-8 text-white/74">
           {description}
         </motion.p>

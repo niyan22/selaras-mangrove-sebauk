@@ -96,7 +96,7 @@ export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) 
                     <a
                       href="mailto:kkndesasebaukunri@gmail.com"
                       aria-label={`Kirim email ke ${member.name}`}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 text-white/75 transition hover:border-ember hover:text-ember"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white/75 transition hover:border-ember hover:text-ember"
                     >
                       <Mail aria-hidden className="h-5 w-5" />
                     </a>

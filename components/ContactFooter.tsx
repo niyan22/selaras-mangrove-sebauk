@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Instagram, Mail, MapPin } from "lucide-react";
+import { AnimatedHeading } from "./AnimatedHeading";
 import { Reveal } from "./Reveal";
 
 function TiktokIcon({ className }: { className?: string }) {
@@ -14,16 +15,21 @@ export function ContactFooter() {
   return (
     <footer id="contact" className="bg-[#06100e] text-white">
       <section className="section-shell grid gap-10 py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-        <Reveal>
-          <p className="text-sm font-bold uppercase tracking-[0.24em] text-ember">Kontak & Footer</p>
-          <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight md:text-6xl">
-            Terus tumbuhkan kisah garis pantai ini.
-          </h2>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/68">
-            Untuk kolaborasi, sponsorship, dokumentasi lapangan, atau data program terverifikasi, hubungi
-            tim KKN Berdampak 2026 Desa Sebauk.
-          </p>
-        </Reveal>
+        <div>
+          <Reveal>
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-ember">Kontak & Footer</p>
+          </Reveal>
+          <AnimatedHeading
+            text="Terus tumbuhkan kisah garis pantai ini."
+            className="mt-4 max-w-3xl text-balance font-display text-4xl font-semibold leading-tight md:text-6xl"
+          />
+          <Reveal delay={0.2}>
+            <p className="mt-5 max-w-2xl text-pretty text-lg leading-8 text-white/68">
+              Untuk kolaborasi, sponsorship, dokumentasi lapangan, atau data program terverifikasi, hubungi
+              tim KKN Berdampak 2026 Desa Sebauk.
+            </p>
+          </Reveal>
+        </div>
         <Reveal className="glass rounded-lg p-6">
           <div className="grid gap-5">
             <a
@@ -52,7 +58,7 @@ export function ContactFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition hover:border-ember hover:text-ember"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 transition hover:border-ember hover:text-ember"
             >
               <Instagram aria-hidden className="h-5 w-5" />
             </a>
@@ -61,14 +67,14 @@ export function ContactFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition hover:border-ember hover:text-ember"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 transition hover:border-ember hover:text-ember"
             >
               <TiktokIcon className="h-5 w-5" />
             </a>
             <a
               href="mailto:kkndesasebaukunri@gmail.com"
               aria-label="Email"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition hover:border-ember hover:text-ember"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 transition hover:border-ember hover:text-ember"
             >
               <Mail aria-hidden className="h-5 w-5" />
             </a>

@@ -23,7 +23,7 @@ export function ProgramBackground() {
         <SectionHeader
           eyebrow="Latar Belakang"
           title="Mengapa SELARAS hadir di Desa Sebauk."
-          description="SELARAS — Sebauk Lestari dan Asri — lahir dari kepedulian Tim KKN Universitas Riau terhadap ekosistem pesisir Desa Sebauk yang menghadapi ancaman abrasi."
+          description="Lahir dari kepedulian terhadap ekosistem pesisir Desa Sebauk yang menghadapi ancaman abrasi, dan pentingnya menjaga hutan mangrove sebagai benteng alami pantai."
         />
         <Reveal delay={0.1} className="mt-8 max-w-3xl">
           <p className="text-lg leading-8 text-ink/72 dark:text-mist/72">
