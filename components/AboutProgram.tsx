@@ -84,8 +84,8 @@ export function AboutProgram({ variant = "full", hideHeader = false }: AboutProg
 
         <Reveal className="relative min-h-[420px] overflow-hidden rounded-lg shadow-glow lg:min-h-[620px]">
           <Image
-            src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1300&q=85"
-            alt="Pemandangan pesisir dengan air dan vegetasi"
+            src="/pelita.jpeg"
+            alt="Tim KKN Universitas Riau dalam sesi Pelatihan Pembibitan dan Edukasi Mangrove Berkelanjutan (PELITA) 2026 di kawasan mangrove Desa Sebauk"
             fill
             className="object-cover"
             sizes="(min-width: 1024px) 50vw, 100vw"
