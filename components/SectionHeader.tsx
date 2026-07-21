@@ -27,10 +27,10 @@ export function SectionHeader({
       <AnimatedHeading
         as="h2"
         text={title}
-        className={`mt-4 text-balance font-display text-4xl font-semibold leading-tight md:text-6xl ${titleClass}`}
+        className={`mt-5 text-balance font-display text-4xl font-semibold leading-tight md:text-6xl ${titleClass}`}
       />
       <Reveal delay={0.2}>
-        <p className={`mt-5 text-pretty text-lg leading-8 ${descriptionClass}`}>{description}</p>
+        <p className={`mt-6 text-pretty text-lg leading-8 ${descriptionClass}`}>{description}</p>
       </Reveal>
     </div>
   );

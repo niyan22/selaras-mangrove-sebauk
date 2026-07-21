@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import type { ReactNode } from "react";
+import { AmbientParticles } from "./AmbientParticles";
 import { AnimatedHeading } from "./AnimatedHeading";
 
 const container = {
@@ -33,6 +34,7 @@ export function PageHero({ eyebrow, title, description, children }: PageHeroProp
   return (
     <section className="relative overflow-hidden bg-ink text-white">
       <div className="animate-tide absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(215,144,59,0.22),transparent_38%),radial-gradient(circle_at_82%_100%,rgba(14,116,144,0.28),transparent_45%)]" />
+      <AmbientParticles count={10} />
       <motion.div
         className="section-shell relative z-10 py-20 md:py-28"
         variants={container}
@@ -56,9 +58,9 @@ export function PageHero({ eyebrow, title, description, children }: PageHeroProp
           text={title}
           trigger="mount"
           delay={0.25}
-          className="mt-4 max-w-3xl text-balance font-display text-4xl font-semibold leading-tight md:text-6xl"
+          className="mt-5 max-w-3xl text-balance font-display text-4xl font-semibold leading-tight md:text-6xl"
         />
-        <motion.p variants={item} className="mt-5 max-w-2xl text-pretty text-lg leading-8 text-white/74">
+        <motion.p variants={item} className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/74">
           {description}
         </motion.p>
         {children ? (

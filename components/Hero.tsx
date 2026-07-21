@@ -5,6 +5,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { ArrowDown, MapPin } from "lucide-react";
 import { useRef } from "react";
 import { AmbientParticles } from "./AmbientParticles";
+import { MangroveSilhouette } from "./MangroveSilhouette";
 
 const MotionLink = motion.create(Link);
 
@@ -40,8 +41,9 @@ export function Hero() {
         style={{ y: backgroundY }}
         className="absolute inset-0 scale-110 bg-hero-texture bg-cover bg-center"
       />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_15%,rgba(215,144,59,0.24),transparent_30%),linear-gradient(90deg,rgba(8,20,18,0.78),rgba(8,20,18,0.18))]" />
+      <div className="animate-tide absolute inset-0 bg-[radial-gradient(circle_at_30%_15%,rgba(215,144,59,0.24),transparent_30%),linear-gradient(90deg,rgba(8,20,18,0.78),rgba(8,20,18,0.18))]" />
       <AmbientParticles />
+      <MangroveSilhouette className="pointer-events-none absolute bottom-0 right-[2%] hidden h-[85%] w-auto text-white/[0.07] lg:block" />
 
       <motion.div
         style={{ opacity: contentOpacity }}
@@ -61,10 +63,10 @@ export function Hero() {
           >
             SELARAS
           </motion.h1>
-          <motion.p variants={item} className="mt-4 font-display text-2xl font-semibold text-ember md:text-3xl">
+          <motion.p variants={item} className="mt-6 font-display text-2xl font-semibold text-ember md:mt-7 md:text-3xl">
             Sebauk Lestari dan Asri
           </motion.p>
-          <motion.p variants={item} className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-white/86 md:text-xl">
+          <motion.p variants={item} className="mt-8 max-w-2xl text-pretty text-lg leading-8 text-white/86 md:mt-9 md:text-xl">
             KKN Berdampak 2026 bermitra dengan masyarakat pesisir untuk memulihkan garis pantai,
             menjaga keanekaragaman hayati, dan membangun ketahanan iklim jangka panjang di Desa Sebauk.
           </motion.p>

@@ -21,10 +21,10 @@ export function ContactFooter() {
           </Reveal>
           <AnimatedHeading
             text="Terus tumbuhkan kisah garis pantai ini."
-            className="mt-4 max-w-3xl text-balance font-display text-4xl font-semibold leading-tight md:text-6xl"
+            className="mt-5 max-w-3xl text-balance font-display text-4xl font-semibold leading-tight md:text-6xl"
           />
           <Reveal delay={0.2}>
-            <p className="mt-5 max-w-2xl text-pretty text-lg leading-8 text-white/68">
+            <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/68">
               Untuk kolaborasi, sponsorship, dokumentasi lapangan, atau data program terverifikasi, hubungi
               tim KKN Berdampak 2026 Desa Sebauk.
             </p>

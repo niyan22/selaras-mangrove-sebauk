@@ -98,3 +98,40 @@ body {
     animation: none;
   }
 }
+
+@keyframes mangrove-sway {
+  0%,
+  100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+.animate-sway {
+  transform-origin: 50% 100%;
+  animation: mangrove-sway 7s ease-in-out infinite;
+}
+
+@keyframes mangrove-sway-slow {
+  0%,
+  100% {
+    transform: rotate(1deg);
+  }
+  50% {
+    transform: rotate(-1deg);
+  }
+}
+
+.animate-sway-slow {
+  transform-origin: 50% 100%;
+  animation: mangrove-sway-slow 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sway,
+  .animate-sway-slow {
+    animation: none;
+  }
+}
