@@ -58,9 +58,9 @@ export function PageHero({ eyebrow, title, description, children }: PageHeroProp
           text={title}
           trigger="mount"
           delay={0.25}
-          className="mt-5 max-w-3xl text-balance font-display text-4xl font-semibold leading-tight md:text-6xl"
+          className="mt-6 max-w-3xl text-balance font-display text-4xl font-semibold leading-tight md:mt-8 md:text-6xl"
         />
-        <motion.p variants={item} className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/74">
+        <motion.p variants={item} className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-white/74 md:mt-8">
           {description}
         </motion.p>
         {children ? (

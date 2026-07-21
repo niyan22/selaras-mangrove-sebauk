@@ -52,7 +52,7 @@ export function Hero() {
         <motion.div className="max-w-4xl" variants={container} initial="hidden" animate="visible">
           <motion.div
             variants={item}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/12 px-4 py-2 text-sm text-white/90 backdrop-blur-lg"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/12 px-4 py-2 text-sm text-white/90 backdrop-blur-lg"
           >
             <MapPin aria-hidden className="h-4 w-4 text-ember" />
             Desa Sebauk, Bengkalis, Riau, Indonesia
@@ -63,14 +63,14 @@ export function Hero() {
           >
             SELARAS
           </motion.h1>
-          <motion.p variants={item} className="mt-6 font-display text-2xl font-semibold text-ember md:mt-7 md:text-3xl">
+          <motion.p variants={item} className="mt-10 font-display text-2xl font-semibold text-ember md:mt-12 md:text-3xl">
             Sebauk Lestari dan Asri
           </motion.p>
-          <motion.p variants={item} className="mt-8 max-w-2xl text-pretty text-lg leading-8 text-white/86 md:mt-9 md:text-xl">
+          <motion.p variants={item} className="mt-9 max-w-2xl text-pretty text-lg leading-8 text-white/86 md:mt-10 md:text-xl">
             KKN Berdampak 2026 bermitra dengan masyarakat pesisir untuk memulihkan garis pantai,
             menjaga keanekaragaman hayati, dan membangun ketahanan iklim jangka panjang di Desa Sebauk.
           </motion.p>
-          <motion.div variants={item} className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <motion.div variants={item} className="mt-10 flex flex-col gap-3 sm:flex-row">
             <MotionLink
               href="/program"
               whileHover={{ scale: 1.03 }}
