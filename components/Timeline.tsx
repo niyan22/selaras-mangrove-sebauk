@@ -1,9 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, MapPin } from "lucide-react";
+import { LightboxProvider } from "./LightboxProvider";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
+import { TimelinePhotoGallery } from "./TimelinePhotoGallery";
 import { TimelineTrack } from "./TimelineTrack";
+
+type Photo = { src: string; width: number; height: number };
 
 type Milestone = {
   phase: string;
@@ -11,7 +14,7 @@ type Milestone = {
   date: string;
   title: string;
   location?: string;
-  photos: string[];
+  photos: Photo[];
 };
 
 const milestones: Milestone[] = [
@@ -22,10 +25,10 @@ const milestones: Milestone[] = [
     title: "Survei Kondisi Lapangan",
     location: "Wisata Mangrove Sebauk",
     photos: [
-      "/Linimasa/linimasa-23-juni-4.jpeg",
-      "/Linimasa/linimasa-23-juni-1.jpeg",
-      "/Linimasa/linimasa-23-juni-2.jpeg",
-      "/Linimasa/linimasa-23-juni-3.jpeg"
+      { src: "/Linimasa/linimasa-23-juni-4.jpeg", width: 1280, height: 720 },
+      { src: "/Linimasa/linimasa-23-juni-1.jpeg", width: 720, height: 1280 },
+      { src: "/Linimasa/linimasa-23-juni-2.jpeg", width: 720, height: 1280 },
+      { src: "/Linimasa/linimasa-23-juni-3.jpeg", width: 720, height: 1280 }
     ]
   },
   {
@@ -34,7 +37,10 @@ const milestones: Milestone[] = [
     date: "30 Juni 2026",
     title: "Pelatihan Pembibitan dan Edukasi Mangrove Berkelanjutan (PELITA) 2026",
     location: "Wisata Taman Mangrove Kelapapati, Paghet Seghagah",
-    photos: ["/Linimasa/linimasa-30-juni-2.jpeg", "/Linimasa/linimasa-30-juni-1.jpeg"]
+    photos: [
+      { src: "/Linimasa/linimasa-30-juni-2.jpeg", width: 1280, height: 960 },
+      { src: "/Linimasa/linimasa-30-juni-1.jpeg", width: 960, height: 1280 }
+    ]
   },
   {
     phase: "03",
@@ -42,7 +48,7 @@ const milestones: Milestone[] = [
     date: "04 Juli 2026",
     title: "Pengumpulan Propagul Bersama Ketua Kelompok Mangrove KEMPAS",
     location: "Wisata Mangrove Sebauk",
-    photos: ["/Linimasa/linimasa-04-juli-1.jpeg"]
+    photos: [{ src: "/Linimasa/linimasa-04-juli-1.jpeg", width: 1280, height: 960 }]
   },
   {
     phase: "04",
@@ -51,9 +57,9 @@ const milestones: Milestone[] = [
     title: "Pembibitan Propagul Mangrove Bersama Ketua KEMPAS Day-1",
     location: "Wisata Mangrove Sebauk",
     photos: [
-      "/Linimasa/linimasa-06-juli-3.jpeg",
-      "/Linimasa/linimasa-06-juli-1.jpeg",
-      "/Linimasa/linimasa-06-juli-2.jpeg"
+      { src: "/Linimasa/linimasa-06-juli-3.jpeg", width: 1280, height: 960 },
+      { src: "/Linimasa/linimasa-06-juli-1.jpeg", width: 1280, height: 960 },
+      { src: "/Linimasa/linimasa-06-juli-2.jpeg", width: 1280, height: 960 }
     ]
   },
   {
@@ -62,7 +68,7 @@ const milestones: Milestone[] = [
     date: "08 Juli 2026",
     title: "Pembibitan Propagul Mangrove Bersama Ketua KEMPAS Day-2",
     location: "Wisata Mangrove Sebauk",
-    photos: ["/Linimasa/linimasa-08-juli-1.jpeg"]
+    photos: [{ src: "/Linimasa/linimasa-08-juli-1.jpeg", width: 1280, height: 960 }]
   },
   {
     phase: "06",
@@ -71,10 +77,10 @@ const milestones: Milestone[] = [
     title: "Pembibitan Propagul Mangrove Bersama Ketua KEMPAS Day-3",
     location: "Wisata Mangrove Sebauk",
     photos: [
-      "/Linimasa/linimasa-09-juli-4.jpeg",
-      "/Linimasa/linimasa-09-juli-1.jpeg",
-      "/Linimasa/linimasa-09-juli-2.jpeg",
-      "/Linimasa/linimasa-09-juli-3.jpeg"
+      { src: "/Linimasa/linimasa-09-juli-4.jpeg", width: 960, height: 1280 },
+      { src: "/Linimasa/linimasa-09-juli-1.jpeg", width: 1280, height: 960 },
+      { src: "/Linimasa/linimasa-09-juli-2.jpeg", width: 960, height: 1280 },
+      { src: "/Linimasa/linimasa-09-juli-3.jpeg", width: 1280, height: 960 }
     ]
   },
   {
@@ -82,7 +88,7 @@ const milestones: Milestone[] = [
     day: "Kamis",
     date: "23 Juli 2026",
     title: "Monitoring dan Evaluasi Bibit Mangrove Selama 3 Minggu",
-    photos: ["/Linimasa/linimasa-23-juli-1.jpeg"]
+    photos: [{ src: "/Linimasa/linimasa-23-juli-1.jpeg", width: 960, height: 1280 }]
   }
 ];
 
@@ -90,14 +96,6 @@ type TimelineProps = {
   variant?: "full" | "teaser";
   hideHeader?: boolean;
 };
-
-function PhotoFrame({ src, alt, sizes }: { src: string; alt: string; sizes: string }) {
-  return (
-    <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-canopy/10 dark:bg-white/5">
-      <Image src={src} alt={alt} fill className="object-cover" sizes={sizes} />
-    </div>
-  );
-}
 
 export function Timeline({ variant = "full", hideHeader = false }: TimelineProps) {
   const isTeaser = variant === "teaser";
@@ -110,9 +108,10 @@ export function Timeline({ variant = "full", hideHeader = false }: TimelineProps
           <SectionHeader
             eyebrow="Linimasa Interaktif"
             title="Dari survei lapangan hingga monitoring bibit."
-            description="Rekam jejak kegiatan Program SELARAS di Desa Sebauk, terdokumentasi lengkap dengan tanggal, lokasi, dan foto lapangan."
+            description="Rekam jejak kegiatan Program SELARAS di Desa Sebauk, terdokumentasi lengkap dengan tanggal, lokasi, dan foto lapangan. Klik foto untuk melihat versi penuh."
           />
         )}
+        <LightboxProvider>
         <TimelineTrack>
           {items.map((item, index) => (
             <Reveal
@@ -142,32 +141,12 @@ export function Timeline({ variant = "full", hideHeader = false }: TimelineProps
                   {item.title}
                 </h3>
 
-                <div
-                  className={`mt-5 grid gap-2 ${
-                    item.photos.length === 1
-                      ? "max-w-sm grid-cols-1"
-                      : item.photos.length === 2
-                        ? "grid-cols-2"
-                        : "grid-cols-2 sm:grid-cols-3"
-                  }`}
-                >
-                  {item.photos.map((src, photoIndex) => (
-                    <PhotoFrame
-                      key={src}
-                      src={src}
-                      alt={`Dokumentasi kegiatan ${item.title}, foto ${photoIndex + 1} dari ${item.photos.length}`}
-                      sizes={
-                        item.photos.length === 1
-                          ? "(min-width: 768px) 384px, 100vw"
-                          : "(min-width: 1024px) 220px, (min-width: 640px) 33vw, 50vw"
-                      }
-                    />
-                  ))}
-                </div>
+                <TimelinePhotoGallery photos={item.photos} title={item.title} />
               </div>
             </Reveal>
           ))}
         </TimelineTrack>
+        </LightboxProvider>
         {isTeaser ? (
           <Reveal delay={0.2} className="mt-10">
             <Link
