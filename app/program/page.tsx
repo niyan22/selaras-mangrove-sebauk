@@ -14,7 +14,7 @@ export default function ProgramPage() {
     <>
       <PageHero
         eyebrow="Tentang SELARAS"
-        title="SELARAS — Sebauk Lestari dan Asri."
+        title="SELARAS (Sebauk Lestari dan Asri)."
         description="Program konservasi mangrove Tim KKN Universitas Riau yang mengintegrasikan edukasi, pembibitan, dan penanaman untuk mewujudkan pesisir Desa Sebauk yang lestari dan asri."
       />
       <ProgramBackground />

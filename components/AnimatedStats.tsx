@@ -7,7 +7,7 @@ import { SectionHeader } from "./SectionHeader";
 
 const stats = [
   { value: 1000, suffix: "+", label: "Target bibit mangrove" },
-  { value: 3.5, suffix: " ha", label: "Perkiraan zona restorasi" },
+  { value: 1200, suffix: " m²", label: "Perkiraan zona restorasi" },
   { value: 60, suffix: "+", label: "Warga dan mahasiswa terlibat" }
 ];
 
