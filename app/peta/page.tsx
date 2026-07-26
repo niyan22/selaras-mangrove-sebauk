@@ -17,7 +17,7 @@ export default function PetaPage() {
       <PageHero
         eyebrow="Peta Interaktif"
         title="Area restorasi Desa Sebauk."
-        description="Penanda ini menggunakan koordinat publik perkiraan untuk Desa Sebauk, Bengkalis. Akan diganti dengan koordinat zona penanaman yang tepat setelah pemetaan lapangan selesai."
+        description="Peta ini diarahkan langsung ke lokasi Desa Sebauk, Bengkalis dalam tampilan satelit. Klik penanda atau tautan Google Maps untuk membuka rute langsung."
       />
       <MapLoader hideHeader />
 
@@ -31,7 +31,7 @@ export default function PetaPage() {
               <div>
                 <p className="text-lg font-bold">Ada juga peta bergaya ilustrasi.</p>
                 <p className="mt-1 max-w-md text-sm leading-6 text-white/78">
-                  Dua peta hasil rancangan tim desain sedang disiapkan untuk melengkapi tampilan ini.
+                  Peta hasil rancangan tim desain sudah bisa dilihat untuk melengkapi tampilan ini.
                 </p>
               </div>
             </div>

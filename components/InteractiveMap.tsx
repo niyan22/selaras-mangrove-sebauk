@@ -1,12 +1,13 @@
 "use client";
 
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
-import { Navigation } from "lucide-react";
+import { ArrowRight, Navigation } from "lucide-react";
 import { PulseMarker } from "./PulseMarker";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
-const sebaukPosition: [number, number] = [1.4308, 102.1569];
+const sebaukPosition: [number, number] = [1.5346833, 102.060403];
+const googleMapsUrl = "https://maps.app.goo.gl/FwSNVmxrUfkMkSUB6";
 
 export function InteractiveMap({ hideHeader = false }: { hideHeader?: boolean }) {
   return (
@@ -17,7 +18,7 @@ export function InteractiveMap({ hideHeader = false }: { hideHeader?: boolean })
             <SectionHeader
               eyebrow="Peta Interaktif"
               title="Area restorasi Desa Sebauk."
-              description="Penanda ini menggunakan koordinat publik perkiraan untuk Desa Sebauk, Bengkalis. Akan diganti dengan koordinat zona penanaman yang tepat setelah pemetaan lapangan selesai."
+              description="Peta ini diarahkan langsung ke lokasi Desa Sebauk, Bengkalis dalam tampilan satelit. Klik penanda atau tautan Google Maps untuk membuka rute langsung."
             />
           )}
           <Reveal className="max-w-2xl rounded-lg border border-canopy/10 bg-white/72 p-5 dark:border-white/10 dark:bg-white/[0.06]">
@@ -31,16 +32,26 @@ export function InteractiveMap({ hideHeader = false }: { hideHeader?: boolean })
                   Peta interaktif ini mendukung perencanaan, penceritaan, dan lapisan pemantauan di masa
                   depan untuk bibit, jalur akses, dan fasilitas masyarakat.
                 </p>
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-tide transition hover:gap-3 dark:text-ember"
+                >
+                  Buka di Google Maps
+                  <ArrowRight aria-hidden className="h-4 w-4 transition-transform" />
+                </a>
               </div>
             </div>
           </Reveal>
         </div>
         <Reveal className="mt-12 overflow-hidden rounded-lg border border-canopy/12 shadow-glow dark:border-white/10">
-          <MapContainer center={sebaukPosition} zoom={12} scrollWheelZoom={false}>
+          <MapContainer center={sebaukPosition} zoom={14} scrollWheelZoom={false}>
             <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community'
+              url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
             />
+            <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}" />
             <CircleMarker
               center={sebaukPosition}
               radius={16}
@@ -55,6 +66,10 @@ export function InteractiveMap({ hideHeader = false }: { hideHeader?: boolean })
                 <strong>Desa Sebauk</strong>
                 <br />
                 Program Penanaman Mangrove - KKN Berdampak 2026
+                <br />
+                <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">
+                  Buka di Google Maps
+                </a>
               </Popup>
             </CircleMarker>
             <PulseMarker position={sebaukPosition} />
