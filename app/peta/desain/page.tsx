@@ -18,7 +18,7 @@ export default function PetaDesainPage() {
       <PageHero
         eyebrow="Peta Desain"
         title="Ilustrasi kawasan hasil rancangan tim desain."
-        description="Peta bergaya ilustrasi ini sudah disiapkan oleh tim desain program untuk melengkapi peta interaktif — menampilkan kawasan restorasi dengan visual yang lebih naratif."
+        description="Peta bergaya ilustrasi ini disiapkan oleh tim untuk melengkapi peta interaktif yang akan menampilkan garis pantai dan kawasan mangrove."
       >
         <Link
           href="/peta"
@@ -39,10 +39,9 @@ export default function PetaDesainPage() {
                 height={1440}
                 alt="Peta desain kawasan restorasi mangrove Desa Sebauk"
               />
-              <p className="mt-4 text-center leading-6 text-ink/56 dark:text-mist/56">
-                Peta bergaya ilustrasi ini disiapkan oleh tim untuk melengkapi peta interaktif yang akan
-                menampilkan garis pantai dan kawasan mangrove.
-              </p>
+              <h2 className="mt-6 text-center font-display text-3xl font-bold text-canopy dark:text-mist md:text-4xl">
+                Peta Mangrove
+              </h2>
             </Reveal>
           </LightboxProvider>
         </div>

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, MapPin, Navigation } from "lucide-react";
+import { LightboxProvider } from "./LightboxProvider";
+import { MapDesignImage } from "./MapDesignImage";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
@@ -29,6 +31,19 @@ export function MapTeaser() {
             </Link>
           </Reveal>
         </div>
+        <LightboxProvider>
+          <Reveal delay={0.15} className="mx-auto mt-14 max-w-3xl">
+            <MapDesignImage
+              src="/Mangrove Garpan.jpg.jpeg"
+              width={2400}
+              height={1440}
+              alt="Peta desain kawasan restorasi mangrove Desa Sebauk"
+            />
+            <h3 className="mt-6 text-center font-display text-3xl font-bold text-canopy dark:text-mist md:text-4xl">
+              Peta Mangrove
+            </h3>
+          </Reveal>
+        </LightboxProvider>
       </div>
     </section>
   );
