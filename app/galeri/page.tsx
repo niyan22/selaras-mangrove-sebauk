@@ -14,7 +14,7 @@ export default function GaleriPage() {
       <PageHero
         eyebrow="Galeri Mangrove"
         title="Catatan visual untuk restorasi dan edukasi."
-        description="Gambar ini masih sementara untuk peluncuran awal, akan diganti dengan dokumentasi asli hasil kerja lapangan di Desa Sebauk."
+        description="Dokumentasi visual asli dari kegiatan lapangan Program SELARAS di Desa Sebauk — dari survei hingga penanaman mangrove. Klik foto untuk melihat versi penuh."
       />
       <Gallery variant="full" hideHeader />
     </>

@@ -1,41 +1,66 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
-import { ArrowRight, Camera } from "lucide-react";
+import { ArrowRight, ZoomIn } from "lucide-react";
+import Image from "next/image";
+import { LightboxProvider, useLightbox } from "./LightboxProvider";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
-const images = [
-  {
-    src: "https://images.unsplash.com/photo-1518877593221-1f28583780b4?auto=format&fit=crop&w=900&q=85",
-    title: "Tepi Pasang Surut",
-    alt: "Permukaan air pesisir di dekat area restorasi"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85",
-    title: "Kanopi Hutan",
-    alt: "Kanopi hutan hijau yang lebat"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85",
-    title: "Lanskap Desa",
-    alt: "Lanskap pedesaan alami saat golden hour"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85",
-    title: "Gerak Pesisir",
-    alt: "Gelombang laut mendekati garis pantai"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=85",
-    title: "Karbon Biru",
-    alt: "Air pesisir jernih dan vegetasi alami"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85",
-    title: "Pemantauan Lapangan",
-    alt: "Pemandangan gunung dan hutan sebagai gambar konservasi sementara"
-  }
+type Photo = { src: string; width: number; height: number };
+
+const photos: Photo[] = [
+  { src: "/gallery/DSC00002.JPG", width: 2000, height: 1125 },
+  { src: "/gallery/DSC00037.JPG", width: 2000, height: 1125 },
+  { src: "/gallery/DSC00045.JPG", width: 2000, height: 1125 },
+  { src: "/gallery/DSC00086.JPG", width: 2000, height: 1125 },
+  { src: "/gallery/DSC09885 (1).JPG", width: 2000, height: 1125 },
+  { src: "/gallery/DSC09930.JPG", width: 2000, height: 1125 },
+  { src: "/gallery/DSC09932.JPG", width: 1125, height: 2000 },
+  { src: "/gallery/DSC09938.JPG", width: 2000, height: 1125 },
+  { src: "/gallery/DSC09942.JPG", width: 2000, height: 1125 },
+  { src: "/gallery/DSC09967.JPG", width: 1125, height: 2000 },
+  { src: "/gallery/DSC09997.JPG", width: 2000, height: 1125 }
 ];
+
+const video = { src: "/gallery/IMG_1896.MOV" };
+
+function PhotoGrid({ items }: { items: Photo[] }) {
+  const openLightbox = useLightbox();
+
+  const lightboxPhotos = items.map((photo, i) => ({
+    ...photo,
+    alt: `Dokumentasi lapangan Program SELARAS, foto ${i + 1} dari ${items.length}`
+  }));
+
+  return (
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+      {items.map((photo, i) => (
+        <Reveal key={photo.src} delay={i * 0.04} className={photo.width < photo.height ? "row-span-2" : ""}>
+          <button
+            type="button"
+            onClick={() => openLightbox(lightboxPhotos, i)}
+            aria-label={`Perbesar foto dokumentasi ${i + 1}`}
+            className={`group/photo relative block w-full overflow-hidden rounded-lg bg-canopy/10 focus:outline-none focus:ring-2 focus:ring-ember dark:bg-white/5 ${
+              photo.width < photo.height ? "aspect-[9/16]" : "aspect-[16/9]"
+            }`}
+          >
+            <Image
+              src={photo.src}
+              alt={lightboxPhotos[i].alt}
+              fill
+              className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/photo:scale-105"
+              sizes="(min-width: 768px) 33vw, 50vw"
+            />
+            <span className="absolute inset-0 flex items-center justify-center bg-ink/0 opacity-0 transition group-hover/photo:bg-ink/25 group-hover/photo:opacity-100">
+              <ZoomIn aria-hidden className="h-6 w-6 text-white drop-shadow" />
+            </span>
+          </button>
+        </Reveal>
+      ))}
+    </div>
+  );
+}
 
 type GalleryProps = {
   variant?: "full" | "teaser";
@@ -44,7 +69,7 @@ type GalleryProps = {
 
 export function Gallery({ variant = "full", hideHeader = false }: GalleryProps) {
   const isTeaser = variant === "teaser";
-  const items = isTeaser ? images.slice(0, 3) : images;
+  const items = isTeaser ? photos.slice(0, 3) : photos;
 
   return (
     <section id="gallery" className="bg-mist py-24 dark:bg-ink md:py-32">
@@ -53,43 +78,28 @@ export function Gallery({ variant = "full", hideHeader = false }: GalleryProps) 
           <SectionHeader
             eyebrow="Galeri Mangrove"
             title="Catatan visual untuk restorasi dan edukasi."
-            description="Gambar ini masih sementara untuk peluncuran awal, akan diganti dengan dokumentasi asli hasil kerja lapangan di Desa Sebauk."
+            description="Dokumentasi visual asli dari kegiatan lapangan Program SELARAS di Desa Sebauk — dari survei hingga penanaman mangrove. Klik foto untuk melihat versi penuh."
           />
         )}
-        <div className={`mt-14 grid auto-rows-[260px] gap-4 ${isTeaser ? "md:grid-cols-3" : "md:grid-cols-3"}`}>
-          {items.map((image, index) => (
-            <Reveal
-              key={image.title}
-              delay={index * 0.05}
-              className={`group relative overflow-hidden rounded-lg ${
-                !isTeaser && (index === 0 || index === 5) ? "md:col-span-2" : ""
-              }`}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                sizes="(min-width: 768px) 33vw, 100vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/76 via-ink/12 to-transparent" />
-              <div
-                aria-hidden
-                className="absolute inset-0 origin-bottom scale-y-0 bg-gradient-to-t from-tide/65 via-tide/25 to-transparent opacity-0 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] motion-safe:group-hover:scale-y-100 motion-safe:group-hover:opacity-100"
-                style={{
-                  clipPath:
-                    "polygon(0% 76%, 10% 81%, 22% 74%, 35% 83%, 48% 76%, 61% 84%, 74% 77%, 87% 82%, 100% 76%, 100% 100%, 0% 100%)"
-                }}
-              />
-              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-white">
-                <h3 className="text-xl font-bold">{image.title}</h3>
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/18 backdrop-blur">
-                  <Camera aria-hidden className="h-5 w-5" />
-                </span>
-              </div>
-            </Reveal>
-          ))}
+        <div className="mt-14">
+          <LightboxProvider>
+            <PhotoGrid items={items} />
+          </LightboxProvider>
         </div>
+        {!isTeaser ? (
+          <Reveal delay={0.15} className="mt-14">
+            <h3 className="font-display text-2xl font-bold text-canopy dark:text-mist">Video Dokumentasi</h3>
+            <video
+              controls
+              preload="metadata"
+              className="mt-5 w-full max-w-3xl rounded-lg border border-canopy/12 shadow-glow dark:border-white/10"
+            >
+              <source src={video.src} />
+              Peramban Anda tidak mendukung pemutaran video ini.{" "}
+              <a href={video.src}>Unduh videonya di sini</a>.
+            </video>
+          </Reveal>
+        ) : null}
         {isTeaser ? (
           <Reveal delay={0.2} className="mt-10">
             <Link
