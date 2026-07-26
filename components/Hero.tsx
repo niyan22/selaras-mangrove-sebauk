@@ -5,6 +5,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { ArrowDown, MapPin } from "lucide-react";
 import { useRef } from "react";
 import { AmbientParticles } from "./AmbientParticles";
+import { MagneticButton } from "./MagneticButton";
 import { MangroveSilhouette } from "./MangroveSilhouette";
 
 const MotionLink = motion.create(Link);
@@ -71,22 +72,26 @@ export function Hero() {
             menjaga keanekaragaman hayati, dan membangun ketahanan iklim jangka panjang di Desa Sebauk.
           </motion.p>
           <motion.div variants={item} className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <MotionLink
-              href="/program"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center rounded-full bg-ember px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-ink transition-colors hover:bg-[#e2a860] focus:outline-none focus:ring-2 focus:ring-white"
-            >
-              Lihat Program
-            </MotionLink>
-            <MotionLink
-              href="/peta"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center rounded-full border border-white/28 bg-white/12 px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md transition-colors hover:bg-white/22 focus:outline-none focus:ring-2 focus:ring-ember"
-            >
-              Lihat Lokasi
-            </MotionLink>
+            <MagneticButton>
+              <MotionLink
+                href="/program"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center justify-center rounded-full bg-ember px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-ink transition-colors hover:bg-[#e2a860] focus:outline-none focus:ring-2 focus:ring-white"
+              >
+                Lihat Program
+              </MotionLink>
+            </MagneticButton>
+            <MagneticButton>
+              <MotionLink
+                href="/peta"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center justify-center rounded-full border border-white/28 bg-white/12 px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md transition-colors hover:bg-white/22 focus:outline-none focus:ring-2 focus:ring-ember"
+              >
+                Lihat Lokasi
+              </MotionLink>
+            </MagneticButton>
           </motion.div>
         </motion.div>
       </motion.div>

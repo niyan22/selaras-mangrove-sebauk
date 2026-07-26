@@ -4,6 +4,7 @@ import { Gallery } from "@/components/Gallery";
 import { Hero } from "@/components/Hero";
 import { KknTeam } from "@/components/KknTeam";
 import { MapTeaser } from "@/components/MapTeaser";
+import { MarqueeTicker } from "@/components/MarqueeTicker";
 import { Timeline } from "@/components/Timeline";
 import { WhyMangroves } from "@/components/WhyMangroves";
 
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <MarqueeTicker />
       <div id="beranda-konten">
         <AboutProgram variant="teaser" />
         <WhyMangroves variant="teaser" />

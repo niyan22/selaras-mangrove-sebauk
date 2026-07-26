@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ContactFooter } from "@/components/ContactFooter";
 import { Navbar } from "@/components/Navbar";
 import { PageTransition } from "@/components/PageTransition";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mangrove-sebauk.vercel.app";
@@ -74,6 +75,7 @@ export default function RootLayout({
         >
           Lewati ke konten utama
         </a>
+        <ScrollProgressBar />
         <Navbar />
         <main id="main-content" className="overflow-hidden">
           <PageTransition>{children}</PageTransition>
