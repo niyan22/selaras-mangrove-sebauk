@@ -5,7 +5,7 @@ import { Timeline } from "@/components/Timeline";
 export const metadata: Metadata = {
   title: "Linimasa",
   description:
-    "Linimasa lengkap Program Penanaman Mangrove KKN Berdampak 2026 di Desa Sebauk, dari observasi lokasi hingga serah terima pemantauan."
+    "Linimasa lengkap Program SELARAS di Desa Sebauk: survei lapangan, pelatihan PELITA 2026, pengumpulan dan pembibitan propagul, hingga monitoring bibit mangrove."
 };
 
 export default function LinimasaPage() {
@@ -13,8 +13,8 @@ export default function LinimasaPage() {
     <>
       <PageHero
         eyebrow="Linimasa Interaktif"
-        title="Dari observasi hingga perawatan jangka panjang."
-        description="Urutan program yang jelas membantu mengubah satu acara penanaman menjadi alur kerja konservasi yang terdokumentasi."
+        title="Dari survei lapangan hingga monitoring bibit."
+        description="Rekam jejak kegiatan Program SELARAS di Desa Sebauk, terdokumentasi lengkap dengan tanggal, lokasi, dan foto lapangan."
       />
       <Timeline variant="full" hideHeader />
     </>
