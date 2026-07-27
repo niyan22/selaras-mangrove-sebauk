@@ -11,11 +11,7 @@ export const metadata: Metadata = {
 export default function GaleriPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Galeri Mangrove"
-        title="Catatan visual untuk restorasi dan edukasi."
-        description="Dokumentasi visual asli dari kegiatan lapangan Program SELARAS di Desa Sebauk — dari survei hingga penanaman mangrove. Klik foto untuk melihat versi penuh."
-      />
+      <PageHero eyebrow="Galeri Mangrove" title="Catatan visual untuk restorasi dan edukasi." />
       <Gallery variant="full" hideHeader />
     </>
   );

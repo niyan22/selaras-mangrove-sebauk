@@ -131,7 +131,7 @@ export function Timeline({ variant = "full", hideHeader = false }: TimelineProps
                     {item.day}, {item.date}
                   </span>
                   {item.location ? (
-                    <span className="inline-flex items-center gap-2 text-ink/56 dark:text-mist/56">
+                    <span className="inline-flex items-center gap-2 text-ink/56 dark:text-mist/75">
                       <MapPin aria-hidden className="h-4 w-4" />
                       {item.location}
                     </span>

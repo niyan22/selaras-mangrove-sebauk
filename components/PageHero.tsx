@@ -26,7 +26,7 @@ const item = {
 type PageHeroProps = {
   eyebrow: string;
   title: string;
-  description: string;
+  description?: string;
   children?: ReactNode;
 };
 
@@ -60,9 +60,11 @@ export function PageHero({ eyebrow, title, description, children }: PageHeroProp
           delay={0.25}
           className="mt-6 max-w-3xl text-balance font-display text-4xl font-semibold leading-tight md:mt-8 md:text-6xl"
         />
-        <motion.p variants={item} className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-white/74 md:mt-8">
-          {description}
-        </motion.p>
+        {description ? (
+          <motion.p variants={item} className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-white md:mt-8">
+            {description}
+          </motion.p>
+        ) : null}
         {children ? (
           <motion.div variants={item} className="mt-8">
             {children}

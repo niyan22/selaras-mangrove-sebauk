@@ -64,7 +64,7 @@ export function WhyMangroves({ variant = "full", hideHeader = false }: WhyMangro
                   <Icon aria-hidden className="h-6 w-6" />
                 </IconBadge>
                 <h3 className="mt-7 text-xl font-bold">{benefit.title}</h3>
-                <p className="mt-4 leading-7 text-white/66">{benefit.body}</p>
+                <p className="mt-4 leading-7 text-white/85">{benefit.body}</p>
               </Reveal>
             );
           })}

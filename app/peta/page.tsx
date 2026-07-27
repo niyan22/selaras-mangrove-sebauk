@@ -30,7 +30,7 @@ export default function PetaPage() {
               </span>
               <div>
                 <p className="text-lg font-bold">Ada juga peta bergaya ilustrasi.</p>
-                <p className="mt-1 max-w-md text-sm leading-6 text-white/78">
+                <p className="mt-1 max-w-md text-sm leading-6 text-white/90">
                   Peta hasil rancangan tim desain sudah bisa dilihat untuk melengkapi tampilan ini.
                 </p>
               </div>

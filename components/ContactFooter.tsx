@@ -24,7 +24,7 @@ export function ContactFooter() {
             className="mt-6 max-w-3xl text-balance font-display text-4xl font-semibold leading-tight md:mt-8 md:text-6xl"
           />
           <Reveal delay={0.2}>
-            <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-white/68 md:mt-8">
+            <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-white/90 md:mt-8">
               Untuk kolaborasi, sponsorship, dokumentasi lapangan, atau data program terverifikasi, hubungi
               tim KKN Berdampak 2026 Desa Sebauk.
             </p>

@@ -26,7 +26,7 @@ export function ProgramBackground() {
           description="Lahir dari kepedulian terhadap ekosistem pesisir Desa Sebauk yang menghadapi ancaman abrasi, dan pentingnya menjaga hutan mangrove sebagai benteng alami pantai."
         />
         <Reveal delay={0.1} className="mt-8 max-w-3xl">
-          <p className="text-lg leading-8 text-ink/72 dark:text-mist/72">
+          <p className="text-lg leading-8 text-ink/72 dark:text-mist/88">
             Program SELARAS (Sebauk Lestari dan Asri) lahir dari kepedulian Tim KKN Universitas
             Riau terhadap kondisi ekosistem pesisir Desa Sebauk yang menghadapi ancaman abrasi
             serta pentingnya menjaga keberlanjutan hutan mangrove sebagai benteng alami pantai.
@@ -56,7 +56,7 @@ export function ProgramBackground() {
                   <Icon aria-hidden className="h-6 w-6" />
                 </IconBadge>
                 <h3 className="mt-5 text-xl font-bold text-canopy dark:text-mist">{item.title}</h3>
-                <p className="mt-3 leading-7 text-ink/68 dark:text-mist/68">{item.body}</p>
+                <p className="mt-3 leading-7 text-ink/68 dark:text-mist/85">{item.body}</p>
               </Reveal>
             );
           })}

@@ -63,7 +63,7 @@ export function AnimatedStats() {
               <p className="font-display text-5xl font-semibold md:text-6xl">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="mt-5 min-h-14 text-sm font-semibold uppercase tracking-[0.18em] text-white/76">
+              <p className="mt-5 min-h-14 text-sm font-semibold uppercase tracking-[0.18em] text-white/90">
                 {stat.label}
               </p>
             </Reveal>

@@ -17,7 +17,7 @@ export function SectionHeader({
   tone = "light"
 }: SectionHeaderProps) {
   const titleClass = tone === "dark" ? "text-white" : "text-canopy dark:text-mist";
-  const descriptionClass = tone === "dark" ? "text-white/68" : "text-ink/70 dark:text-mist/72";
+  const descriptionClass = tone === "dark" ? "text-white/90" : "text-ink/70 dark:text-mist";
 
   return (
     <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>

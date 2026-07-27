@@ -28,7 +28,7 @@ export function InteractiveMap({ hideHeader = false }: { hideHeader?: boolean })
               </span>
               <div>
                 <h3 className="text-xl font-bold text-canopy dark:text-mist">Konteks pesisir Bengkalis</h3>
-                <p className="mt-2 leading-7 text-ink/68 dark:text-mist/68">
+                <p className="mt-2 leading-7 text-ink/68 dark:text-mist/85">
                   Peta interaktif ini mendukung perencanaan, penceritaan, dan lapisan pemantauan di masa
                   depan untuk bibit, jalur akses, dan fasilitas masyarakat.
                 </p>

@@ -103,7 +103,7 @@ export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) 
                 </div>
               ) : null}
             </div>
-            <p className="text-white/70">
+            <p className="text-white/85">
               {members.length} mahasiswa lintas divisi menjalankan program ini di lapangan.
             </p>
             <Link

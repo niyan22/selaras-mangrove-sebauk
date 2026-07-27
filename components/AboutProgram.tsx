@@ -72,7 +72,7 @@ export function AboutProgram({ variant = "full", hideHeader = false }: AboutProg
                       </IconBadge>
                       <div>
                         <h3 className="text-lg font-bold text-canopy dark:text-mist">{pillar.title}</h3>
-                        <p className="mt-2 leading-7 text-ink/68 dark:text-mist/68">{pillar.body}</p>
+                        <p className="mt-2 leading-7 text-ink/68 dark:text-mist/85">{pillar.body}</p>
                       </div>
                     </div>
                   </Reveal>
