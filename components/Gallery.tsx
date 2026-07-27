@@ -78,7 +78,7 @@ export function Gallery({ variant = "full", hideHeader = false }: GalleryProps) 
           <SectionHeader
             eyebrow="Galeri Mangrove"
             title="Catatan visual untuk restorasi dan edukasi."
-            description="Dokumentasi visual asli dari kegiatan lapangan Program SELARAS di Desa Sebauk — dari survei hingga penanaman mangrove. Klik foto untuk melihat versi penuh."
+            description="Dokumentasi kegiatan lapangan Program SELARAS di Desa Sebauk"
           />
         )}
         <div className="mt-14">

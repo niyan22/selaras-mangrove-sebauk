@@ -39,10 +39,15 @@ export function ContactFooter() {
               <Mail aria-hidden className="h-5 w-5 text-ember" />
               kkndesasebaukunri@gmail.com
             </a>
-            <p className="flex items-start gap-4 text-white/80">
+            <a
+              href="https://maps.app.goo.gl/FwSNVmxrUfkMkSUB6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 text-white/80 transition hover:text-white"
+            >
               <MapPin aria-hidden className="mt-1 h-5 w-5 shrink-0 text-ember" />
               Desa Sebauk, Kabupaten Bengkalis, Riau, Indonesia
-            </p>
+            </a>
           </div>
         </Reveal>
       </section>

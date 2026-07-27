@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactFooter } from "@/components/ContactFooter";
+import { DisableCopy } from "@/components/DisableCopy";
 import { Navbar } from "@/components/Navbar";
 import { PageTransition } from "@/components/PageTransition";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
@@ -75,6 +76,7 @@ export default function RootLayout({
         >
           Lewati ke konten utama
         </a>
+        <DisableCopy />
         <ScrollProgressBar />
         <Navbar />
         <main id="main-content" className="overflow-hidden">

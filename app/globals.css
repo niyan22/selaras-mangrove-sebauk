@@ -20,11 +20,18 @@ body {
   margin: 0;
   background: #f5f8f4;
   color: #081412;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .dark body {
   background: #07100f;
   color: #e8f1ec;
+}
+
+p {
+  text-align: justify;
+  text-align-last: left;
 }
 
 ::selection {
