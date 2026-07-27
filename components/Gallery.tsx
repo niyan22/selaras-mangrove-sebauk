@@ -41,7 +41,7 @@ function PhotoGrid({ items }: { items: Photo[] }) {
             type="button"
             onClick={() => openLightbox(lightboxPhotos, i)}
             aria-label={`Perbesar foto dokumentasi ${i + 1}`}
-            className={`group/photo relative block w-full overflow-hidden rounded-lg bg-canopy/10 focus:outline-none focus:ring-2 focus:ring-ember dark:bg-white/5 ${
+            className={`group/photo relative block w-full overflow-hidden rounded-lg border border-canopy/10 bg-canopy/10 shadow-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-ember/50 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-ember dark:border-white/10 dark:bg-white/5 ${
               photo.width < photo.height ? "aspect-[9/16]" : "aspect-[16/9]"
             }`}
           >
@@ -49,11 +49,17 @@ function PhotoGrid({ items }: { items: Photo[] }) {
               src={photo.src}
               alt={lightboxPhotos[i].alt}
               fill
-              className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/photo:scale-105"
+              className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/photo:scale-110"
               sizes="(min-width: 768px) 33vw, 50vw"
             />
-            <span className="absolute inset-0 flex items-center justify-center bg-ink/0 opacity-0 transition group-hover/photo:bg-ink/25 group-hover/photo:opacity-100">
-              <ZoomIn aria-hidden className="h-6 w-6 text-white drop-shadow" />
+            <span
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/0 to-transparent opacity-70 transition-opacity duration-500 group-hover/photo:opacity-90"
+            />
+            <span className="absolute inset-0 flex scale-90 items-center justify-center opacity-0 transition-all duration-500 group-hover/photo:scale-100 group-hover/photo:opacity-100">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-md">
+                <ZoomIn aria-hidden className="h-5 w-5 drop-shadow" />
+              </span>
             </span>
           </button>
         </Reveal>
