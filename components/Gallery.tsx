@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, ZoomIn } from "lucide-react";
+import { ArrowRight, Film, ZoomIn } from "lucide-react";
 import Image from "next/image";
 import { LightboxProvider, useLightbox } from "./LightboxProvider";
 import { Reveal } from "./Reveal";
@@ -16,14 +16,21 @@ const photos: Photo[] = [
   { src: "/gallery/DSC00086.JPG", width: 2000, height: 1125 },
   { src: "/gallery/DSC09885 (1).JPG", width: 2000, height: 1125 },
   { src: "/gallery/DSC09930.JPG", width: 2000, height: 1125 },
-  { src: "/gallery/DSC09932.JPG", width: 1125, height: 2000 },
+  { src: "/gallery/DSC09932.JPG", width: 1102, height: 1036 },
   { src: "/gallery/DSC09938.JPG", width: 2000, height: 1125 },
   { src: "/gallery/DSC09942.JPG", width: 2000, height: 1125 },
-  { src: "/gallery/DSC09967.JPG", width: 1125, height: 2000 },
-  { src: "/gallery/DSC09997.JPG", width: 2000, height: 1125 }
+  { src: "/gallery/DSC09967.JPG", width: 1125, height: 1088 },
+  { src: "/gallery/DSC09997.JPG", width: 2000, height: 1125 },
+  { src: "/gallery/IMG_9025.jpg", width: 2000, height: 1500 },
+  { src: "/gallery/IMG_9082.jpg", width: 1500, height: 2000 },
+  { src: "/gallery/WhatsApp Image 2026-07-28 at 21.29.12.jpeg", width: 828, height: 457 },
+  { src: "/gallery/WhatsApp Image 2026-07-28 at 21.29.20.jpeg", width: 960, height: 1280 }
 ];
 
-const video = { src: "/gallery/IMG_1896.MOV" };
+const videos = [
+  { src: "/video/video selaras.MOV", label: "Video Dokumentasi 1" },
+  { src: "/video/IMG_1896.MOV", label: "Video Dokumentasi 2" }
+];
 
 function PhotoGrid({ items }: { items: Photo[] }) {
   const openLightbox = useLightbox();
@@ -36,14 +43,12 @@ function PhotoGrid({ items }: { items: Photo[] }) {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
       {items.map((photo, i) => (
-        <Reveal key={photo.src} delay={i * 0.04} className={photo.width < photo.height ? "row-span-2" : ""}>
+        <Reveal key={photo.src} delay={i * 0.04}>
           <button
             type="button"
             onClick={() => openLightbox(lightboxPhotos, i)}
             aria-label={`Perbesar foto dokumentasi ${i + 1}`}
-            className={`group/photo relative block w-full overflow-hidden rounded-lg border border-canopy/10 bg-canopy/10 shadow-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-ember/50 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-ember dark:border-white/10 dark:bg-white/5 ${
-              photo.width < photo.height ? "aspect-[9/16]" : "aspect-[16/9]"
-            }`}
+            className="group/photo relative block aspect-[16/9] w-full overflow-hidden rounded-lg border border-canopy/10 bg-canopy/10 shadow-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-ember/50 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-ember dark:border-white/10 dark:bg-white/5"
           >
             <Image
               src={photo.src}
@@ -94,16 +99,27 @@ export function Gallery({ variant = "full", hideHeader = false }: GalleryProps) 
         </div>
         {!isTeaser ? (
           <Reveal delay={0.15} className="mt-14">
-            <h3 className="font-display text-2xl font-bold text-canopy dark:text-mist">Video Dokumentasi</h3>
-            <video
-              controls
-              preload="metadata"
-              className="mt-5 w-full max-w-3xl rounded-lg border border-canopy/12 shadow-glow dark:border-white/10"
-            >
-              <source src={video.src} />
-              Peramban Anda tidak mendukung pemutaran video ini.{" "}
-              <a href={video.src}>Unduh videonya di sini</a>.
-            </video>
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-canopy text-white dark:bg-ember dark:text-ink">
+                <Film aria-hidden className="h-5 w-5" />
+              </span>
+              <h3 className="font-display text-2xl font-bold text-canopy dark:text-mist">Video Dokumentasi</h3>
+            </div>
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              {videos.map((item) => (
+                <video
+                  key={item.src}
+                  controls
+                  preload="metadata"
+                  aria-label={item.label}
+                  className="w-full rounded-lg border border-canopy/12 shadow-glow dark:border-white/10"
+                >
+                  <source src={item.src} />
+                  Peramban Anda tidak mendukung pemutaran video ini.{" "}
+                  <a href={item.src}>Unduh videonya di sini</a>.
+                </video>
+              ))}
+            </div>
           </Reveal>
         ) : null}
         {isTeaser ? (

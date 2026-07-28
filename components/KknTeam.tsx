@@ -116,6 +116,7 @@ export function KknTeam({ variant = "full", hideHeader = false }: KknTeamProps) 
           </div>
         ) : (
           <LightboxProvider>
+            <h2 className="text-center text-3xl font-bold text-white md:text-4xl">10 Tim KKN Desa Sebauk</h2>
             <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {members.map((member, index) => (
                 <TeamCard
