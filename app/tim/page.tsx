@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { KknTeam } from "@/components/KknTeam";
 import { PageHero } from "@/components/PageHero";
+import { Testimonials } from "@/components/Testimonials";
 
 export const metadata: Metadata = {
   title: "Tim",
@@ -16,6 +17,7 @@ export default function TimPage() {
         title="Tim mahasiswa yang mendukung konservasi skala masyarakat."
         description="Sepuluh mahasiswa lintas jurusan Universitas Riau yang menjalankan Program SELARAS di Desa Sebauk."
       />
+      <Testimonials />
       <KknTeam variant="full" hideHeader />
     </>
   );
